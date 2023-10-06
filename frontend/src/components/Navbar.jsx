@@ -1,10 +1,23 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import useAppContext from '../AppContext';
+import useCartContext from './CartContest';
 
 const Navbar = ({mycart}) => {
 
     const{loggedIn, setloggedIn, logout}= useAppContext();
+    const {cartItems}= useCartContext();
+   
+    const showLoginOption=()=>{
+        if(loggedIn){
+            return (
+             <li className="nav-item">
+               <button className='btn btn-danger' onClick={logout} >  Logout</button>
+
+            </li>
+            );
+        }
+    }
 
   return (
     <>
@@ -46,6 +59,7 @@ const Navbar = ({mycart}) => {
                 About
             </NavLink>
           </li>
+          {showLoginOption()}
 
           
         </ul>
