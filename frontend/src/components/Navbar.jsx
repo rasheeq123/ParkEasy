@@ -1,12 +1,17 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import useAppContext from '../AppContext';
 
-const Navbar = () => {
+const Navbar = ({mycart}) => {
+
+    const{loggedIn, setloggedIn, logout}= useAppContext();
+
   return (
     <>
-  <nav className="navbar navbar-expand-lg bg-body-tertiary">
-    <div className="container-fluid">
+  <nav className="navbar navbar-expand-lg bg-body-tertiary text-light ">
+    <div className="container-fluid bg-danger ">
       <a className="navbar-brand" href="#">
-        Navbar
+        
       </a>
       <button
         className="navbar-toggler"
