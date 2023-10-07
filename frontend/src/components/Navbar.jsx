@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import useAppContext from '../AppContext';
-import useCartContext from './CartContest';
+
 
 const Navbar = ({mycart}) => {
 
     const{loggedIn, setloggedIn, logout}= useAppContext();
-    const {cartItems}= useCartContext();
+    
    
     const showLoginOption=()=>{
         if(loggedIn){
@@ -22,7 +22,7 @@ const Navbar = ({mycart}) => {
   return (
     <>
   <nav className="navbar navbar-expand-lg bg-body-tertiary text-light ">
-    <div className="container-fluid bg-danger ">
+    <div className="container-fluid  ">
       <a className="navbar-brand" href="#">
         
       </a>

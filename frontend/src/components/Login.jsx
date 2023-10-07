@@ -17,7 +17,7 @@ const Login = () => {
     onSubmit: async (values)=> {
         console.log(values);
 
-        const res = await fetch('http://localhost:5000/user/authenticate',{
+        const res = await fetch('http://localhost:5500/user/authenticate',{
             method: 'POST',
             body:JSON.stringify(values),
             headers:{
@@ -45,9 +45,9 @@ const Login = () => {
                     
                 })
             }
-            else{ // yaha pe ye condution jab address me kuch glti kr denge tb chlegi, basically jab error occur hoga 
+            else{  
                 Swal.fire({
-                    icon:'error', // error defaullt h yaha
+                    icon:'error', 
                     title:'Error',
                     text:'Something went wrong!!'
                 })
