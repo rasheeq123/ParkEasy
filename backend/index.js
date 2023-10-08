@@ -1,6 +1,7 @@
 // impost express
 const express = require('express'); // backend me ais hi import krte h unlike react 
 const userRouter=require('./routers/userRouter');
+const slotRouter=require('./routers/slotRouter');
 
 const cors = require('cors');
 
