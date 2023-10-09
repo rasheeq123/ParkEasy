@@ -13,10 +13,11 @@ const port= 5500;
 app.use(express.json());  
 
 app.use(cors({
-    origin:['http://localhost:3000']
+    origin:['http://localhost:3500']
 }));
 
 app.use('/user', userRouter);
+app.use('/slot', slotRouter);
 
 
 //routes-request aane pe response generate krte h
@@ -35,17 +36,21 @@ app.get('/getall', (req , res)=>{
     res.send('response from getall')
 });
 
+app.get('/getbyslot', (req , res)=>{
+    res.send('response from getbyslot')
+});
+
 app.get('/getbyid', (req , res)=>{
     res.send('response from getbyid')
 });
 
-app.get('/update', (req , res)=>{
-    res.send('response from update')
-});
+// app.get('/update', (req , res)=>{
+//     res.send('response from update')
+// });
 
-app.get('/delete', (req , res)=>{
-    res.send('response from delete')
-});
+// app.get('/delete', (req , res)=>{
+//     res.send('response from delete')
+// });
 
 app.listen(port, ()=>{
     console.log('server started')
