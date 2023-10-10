@@ -48,17 +48,6 @@ router.get('/getbyid/:id', (req, res) => {
     //res.send('response from user getbyid')
 });
 
-router.get('/getbycity/:city', (req, res) => {
-    Model.find({city: req.params.city})
-    .then((result)=>{            
-        res.json(result);
-    })
-    
-    .catch((err)=>{
-        res.json(err);
-    })
-    
-});
 
 router.put('/update/:id', (req, res) => {
     Model.findByIdAndUpdate(req.params.id, req.body, {new:true}) // (new:true updates data dikhaega) , req,params.id islie taaki hum id se data access kr ske

@@ -13,7 +13,7 @@ const port= 5500;
 app.use(express.json());  
 
 app.use(cors({
-    origin:['http://localhost:3500']
+    origin:['http://localhost:3000']
 }));
 
 app.use('/user', userRouter);
@@ -44,13 +44,13 @@ app.get('/getbyid', (req , res)=>{
     res.send('response from getbyid')
 });
 
-// app.get('/update', (req , res)=>{
-//     res.send('response from update')
-// });
+app.get('/update', (req , res)=>{
+    res.send('response from update')
+});
 
-// app.get('/delete', (req , res)=>{
-//     res.send('response from delete')
-// });
+app.get('/delete', (req , res)=>{
+    res.send('response from delete')
+});
 
 app.listen(port, ()=>{
     console.log('server started')

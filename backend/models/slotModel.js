@@ -5,7 +5,7 @@ const slotschema = new Schema({
     slot: Number,
     vehicle_no : String,
     time: Date,
-    user_id: Number
+    // user_id: Number
 });
 
 module.exports=model('parkings', slotschema);

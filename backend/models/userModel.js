@@ -1,4 +1,4 @@
-const {Schema, model} = require('../connection');
+const {Schema, model} = require('..connection/');
 
 const myschema = new Schema({
     name : String,
@@ -6,4 +6,4 @@ const myschema = new Schema({
     password : String
 });
 
-module.exports = model('users', myschema);
+module.exports = model('user', myschema);
