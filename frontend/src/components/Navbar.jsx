@@ -60,6 +60,11 @@ const Navbar = ({mycart}) => {
             </NavLink>
           </li>
           <li className="nav-item">
+            <NavLink className="nav-link" to = "/bookslot">
+                Book Slot
+            </NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink className="nav-link" to = "/about">
                 About
             </NavLink>

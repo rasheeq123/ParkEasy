@@ -17,7 +17,7 @@ const Login = () => {
     onSubmit: async (values)=> {
         console.log(values);
 
-        const res = await fetch('http://localhost:5500/user/authenticate',{
+        const res = await fetch('http://localhost:5000/user/authenticate',{
             method: 'POST',
             body:JSON.stringify(values),
             headers:{

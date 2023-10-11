@@ -7,7 +7,7 @@ const cors = require('cors');
 
 // initialize express
 const app=express();
-const port= 5500;
+const port= 5000;
 
 //middleware: request aane pe uska data access kr skte h, modify krte h lekin response nhi generate kr skte h routes ki trh
 app.use(express.json());  
