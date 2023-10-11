@@ -51,7 +51,7 @@ router.get('/getbyslot/:slot', (req,res)=>{
 })
 
 router.get('/getbyvehicle_no/:vehicle_no', (req, res) => {
-    Model.find({vehicle_no: req.params.vehicle_no})
+    Model.findOne({vehicle_no: req.params.vehicle_no})
     .then((result)=>{            
         res.json(result);
     })
@@ -85,3 +85,6 @@ router.get('/getbyid/:id', (req, res) => {
     })
     
 });
+
+
+module.exports = router;

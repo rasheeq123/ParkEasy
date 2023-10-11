@@ -1,11 +1,11 @@
-const { Schema, model}= require('..connection');
+const { Schema, model, Types}= require('../connection');
 
 const slotschema = new Schema({
     floor: Number ,
     slot: Number,
     vehicle_no : String,
     time: Date,
-    // user_id: Number
+    user: {type : Types.ObjectId, ref: 'user'}
 });
 
 module.exports=model('parkings', slotschema);
