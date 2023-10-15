@@ -15,7 +15,7 @@ const SlotList = () => {
                 <div className="row">
                     {slotArray.map((item) => (
                         <div className="col-md-2">
-                            <div className="card py-2 mt-4">
+                            <div className="card py-2 mt-4 text-center">
                                 <h5>Floor: {item.floor}</h5>
                                 <h5>Slot No: {item.slot}</h5>
 

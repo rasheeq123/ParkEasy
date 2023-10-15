@@ -17,7 +17,7 @@ app.use(cors({
 }));
 
 app.use('/user', userRouter);
-app.use('/slot', slotRouter);
+app.use('/parkings', slotRouter);
 
 
 //routes-request aane pe response generate krte h
