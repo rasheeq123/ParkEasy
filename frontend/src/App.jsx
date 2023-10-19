@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SlotList from './components/SlotList';
 import BookSlot from './components/BookSlot';
 import UserAuth from './UserAuth';
+import ManageSlots from './components/ManageSlots';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/slotlist" element={<UserAuth><SlotList /> </UserAuth>} />
             <Route path="/bookslot" element={<UserAuth><BookSlot /></UserAuth>} />
+            <Route path="/manageslot" element={<ManageSlots />} />
             <Route path="/about" element={<UserAuth><About /></UserAuth>} />
           </Routes>
         </AppProvider>

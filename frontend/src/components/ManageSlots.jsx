@@ -7,7 +7,7 @@ const ManageSlots = () => {
   }
 
   return (
-    <div>ManageSlots</div>
+    <div>Manage Slots</div>
   )
 }
 
