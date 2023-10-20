@@ -27,6 +27,7 @@ const ManageSlots = () => {
                 <thead>
                     <tr>
                         
+                        <th>S.no</th>
                         <th>ID</th>
                         <th>Floor</th>
                         <th>Slot</th>
