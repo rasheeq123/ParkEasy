@@ -7,18 +7,14 @@ import * as Yup from 'yup';
 
 
 const BookSchema = Yup.object().shape({
-   floor: Yup.string()
-      
-  .required('Required'),
-   slot: Yup.string()
-      
-  .required('Required'),
-   vehicle: Yup.string()
-      
-  .required('Required')
-  
+   floor: Yup.number().required('Required'),
 
-          
+   slot: Yup.number().required('Required'),
+   
+   vehicle: Yup.string().min(9, 'Invalid!')
+   .max(12, 'Invalid!').required('Required'),
+   
+    time: Yup.date().required('Required')
    });
 
 const BookSlot = () => {
@@ -93,6 +89,7 @@ const BookSlot = () => {
                         <h2 className="my-3">Book Slot</h2>
                         <form onSubmit={bookslot.handleSubmit}>
                             <label  >Floor</label>
+                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.floor && bookslot.errors.floor}</span> 
 
                             <select className='form-control mb-3' id="floor" onChange={bookslot.handleChange} value={bookslot.values.floor}>
                                 <option value={0}> 0</option>
@@ -112,6 +109,7 @@ const BookSlot = () => {
 
 
                             <label>Slot</label>
+                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.slot && bookslot.errors.slot}</span> 
                             <select className='form-control mb-3' id="slot" onChange={bookslot.handleChange} value={bookslot.values.slot}>
                                 <option value="">Select Slot</option>
                                 {
@@ -126,10 +124,12 @@ const BookSlot = () => {
                             
 
                             <label>Vehicle No. </label>
+                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.vehicle && bookslot.errors.vehicle}</span> 
 
                             <input id="vehicle" type="text" className='form-control mb-3' onChange={bookslot.handleChange} value={bookslot.values.vehicle} />
 
                             <label>Time </label>
+                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.time && bookslot.errors.time}</span> 
                             <input id="time" type="datetime-local" className='form-control mb-3' onChange={bookslot.handleChange} value={bookslot.values.time} />
 
                             <button type="submit" className="btn btn-primary">Submit</button>
