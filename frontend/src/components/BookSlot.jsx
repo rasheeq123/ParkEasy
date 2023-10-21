@@ -61,6 +61,7 @@ const BookSlot = () => {
                             <label  >Floor</label>
 
                             <select className='form-control mb-3' id="floor" onChange={bookslot.handleChange} value={bookslot.values.floor}>
+                                <option value={0}> 0</option>
                                 <option value={1}> 1</option>
                                 <option value={2}> 2</option>
                                 <option value={3}> 3</option>

@@ -5,7 +5,7 @@ const ManageSlots = () => {
   const [userList, setuserList] = useState([])
 
   const fetchSlots = async ()=>{
-    const res=await fetch('http://localhost:5000/user/getall')
+    const res=await fetch('http://localhost:5000/parkings/getall')
     console.log(res.status);
     const data= await res.json(); // data fetch krne ke lie
     console.table(data);
@@ -32,6 +32,7 @@ const ManageSlots = () => {
                         <th>Floor</th>
                         <th>Slot</th>
                         <th>Vehicle No.</th>
+                        <th>Date</th>
                         <th>Time</th>
                     </tr>
                 </thead>
@@ -44,7 +45,8 @@ const ManageSlots = () => {
                         <td>{parkings.floor}</td>
                         <td>{parkings.slot}</td>
                         <td>{parkings.vehicle}</td>
-                        <td>{parkings.time}</td>
+                        <td>{new Date(parkings.time).toLocaleDateString()}</td>
+                        <td>{new Date(parkings.time).toLocaleTimeString()}</td>
                       </tr>
                     ))
                   }
