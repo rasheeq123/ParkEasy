@@ -246,6 +246,88 @@ const slotData=[
         name:'',
         time:''
 
+    },
+    {
+        floor: 3,
+        slot: 131,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 3,
+        slot: 132,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 3,
+        slot: 133,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 3,
+        slot: 134,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 3,
+        slot: 135,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 3,
+        slot: 136,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 3,
+        slot: 137,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 3,
+        slot: 138,
+        vehicle:'',
+        name:'',
+        time:''
+
+    
+    },
+    {
+        floor: 3,
+        slot: 139,
+        vehicle:'',
+        name:'',
+        time:''
+
+    
+    },
+    {
+        floor: 3,
+        slot: 140,
+        vehicle:'',
+        name:'',
+        time:''
+
     }
 ];
 export default slotData;

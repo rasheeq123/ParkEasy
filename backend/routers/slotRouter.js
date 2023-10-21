@@ -50,7 +50,7 @@ router.get('/getbyslot/:slot', (req,res)=>{
     
 })
 
-router.get('/getbyvehicle_no/:vehicle_no', (req, res) => {
+router.get('/getbyvehicle/:vehicle', (req, res) => {
     Model.findOne({vehicle_no: req.params.vehicle_no})
     .then((result)=>{            
         res.json(result);
@@ -84,6 +84,25 @@ router.get('/getbyid/:id', (req, res) => {
         res.json(err);
     })
     
+});
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body, {new:true}) // (new:true updates data dikhaega) , req,params.id islie taaki hum id se data access kr ske
+    .then((result)=>{
+        res.json(result);
+    })
+    .catch((err)=>{
+        res.json(err);
+    });
+});
+
+router.delete('/delete/:id', (req, res) => {
+   Model.findByIdAndDelete(req.params.id)
+   .then((result)=>{
+    res.json(result);
+   })
+   .catch((err)=>{
+    res.json(err);
+   });
 });
 
 

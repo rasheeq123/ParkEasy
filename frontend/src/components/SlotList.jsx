@@ -21,8 +21,7 @@ const SlotList = () => {
         // console.log(slotData.filter(slot => ( !bookedSlots.includes(slot.slot)  )));
     }
     useEffect(() => {
-        // when component opens
-
+        
         fetchSlots();
 
     }, [])
