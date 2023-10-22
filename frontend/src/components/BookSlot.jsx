@@ -7,9 +7,10 @@ import * as Yup from 'yup';
 
 
 const BookSchema = Yup.object().shape({
-   floor: Yup.number().required('Required'),
+//    floor: Yup.number().required('Required'),
 
-   slot: Yup.number().required('Required'),
+   slot: Yup.number().min(0, 'Invalid!')
+   .required('Required'),
    
    vehicle: Yup.string().min(9, 'Invalid!')
    .max(12, 'Invalid!').required('Required'),
@@ -19,14 +20,16 @@ const BookSchema = Yup.object().shape({
 
 const BookSlot = () => {
 
-    const [slotsAvailable, setSlotsAvailable] = useState(slotData.map(slotData => slotData.slot));
+    const [selectedFloor, setselectedFloor] = useState(0);
+    const [slotsAvailable, setSlotsAvailable] = useState(slotData.filter(slotData => slotData.floor === selectedFloor).map(slotData => slotData.slot));
+
 
     const fetchbookedSlots = async () => {
         const res = await fetch('http://localhost:5000/parkings/getall')
         console.log(res.status);
         const data = await res.json();
         const bookedslots = data.map(slotData => slotData.slot);
-        setSlotsAvailable(slotsAvailable.filter(slotNum => !bookedslots.includes(slotNum)))
+        setSlotsAvailable(slotsAvailable.filter(slotNum => !bookedslots.includes(slotNum) ))
     }
 
     useEffect(() => {
@@ -43,9 +46,9 @@ const BookSlot = () => {
             slot: 0,
             vehicle: '',
             user: currentUser._id,
-            time: new Date()
+            time: null
         },
-        onSubmit: async (values) => {
+        onSubmit: async (values, {resetForm}) => {
             console.log(values);
             const res = await fetch('http://localhost:5000/parkings/add', {
                 method: 'POST',
@@ -66,7 +69,9 @@ const BookSlot = () => {
                 setloggedIn(true);
                 const data = await res.json();
                 console.log(data);
-                sessionStorage.setItem('parkings', JSON.stringify(data));   
+                sessionStorage.setItem('parkings', JSON.stringify(data)); 
+                resetForm();
+                fetchbookedSlots();  
             }
 
             else { // yaha pe ye condution jab address me kuch glti kr denge tb chlegi, basically jab error occur hoga 
@@ -81,6 +86,19 @@ const BookSlot = () => {
         },
         validationSchema: BookSchema
     });
+
+    const setFloor = async (e) => {
+        bookslot.setFieldValue('floor', e.target.value);
+        // console.log(bookslot.values);
+        setselectedFloor(parseInt(e.target.value));
+        const temp = slotData.filter(slotData => slotData.floor === parseInt(e.target.value)).map(slotData => slotData.slot)
+        const res = await fetch('http://localhost:5000/parkings/getall')
+        console.log(res.status);
+        const data = await res.json();
+        const bookedslots = data.map(slotData => slotData.slot);
+        setSlotsAvailable(temp.filter(slotNum => !bookedslots.includes(slotNum) ))
+    }
+
     return (
         <div className="py-5 vh-100 bg-body-secondary">
             <div className="col-md-4 mx-auto">
@@ -89,9 +107,9 @@ const BookSlot = () => {
                         <h2 className="my-3">Book Slot</h2>
                         <form onSubmit={bookslot.handleSubmit}>
                             <label  >Floor</label>
-                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.floor && bookslot.errors.floor}</span> 
+                            {/* <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.floor && bookslot.errors.floor}</span>  */}
 
-                            <select className='form-control mb-3' id="floor" onChange={bookslot.handleChange} value={bookslot.values.floor}>
+                            <select className='form-control mb-3' id="floor" onChange={setFloor} value={bookslot.values.floor}>
                                 <option value={0}> 0</option>
                                 <option value={1}> 1</option>
                                 <option value={2}> 2</option>
