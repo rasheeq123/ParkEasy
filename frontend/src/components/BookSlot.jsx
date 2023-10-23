@@ -65,8 +65,6 @@ const BookSlot = () => {
                     title: 'Booked Successfully'
 
                 })
-
-                
                 setloggedIn(true);
                 const data = await res.json();
                 console.log(data);
