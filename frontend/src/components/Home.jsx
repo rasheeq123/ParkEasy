@@ -30,6 +30,7 @@ const Home = () => {
         display: 'flex',
         justifyContent: 'center',
         // opacity:'0.8'
+        
       }}
       />
 
