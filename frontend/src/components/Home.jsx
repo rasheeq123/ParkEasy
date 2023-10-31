@@ -31,6 +31,7 @@ const Home = () => {
         justifyContent: 'center',
         // opacity:'0.8'
         
+        
       }}
       />
 
