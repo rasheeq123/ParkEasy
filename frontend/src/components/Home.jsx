@@ -32,6 +32,7 @@ const Home = () => {
         // opacity:'0.8'
         
         
+        
       }}
       />
 
