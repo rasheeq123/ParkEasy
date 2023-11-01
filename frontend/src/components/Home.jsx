@@ -32,9 +32,10 @@ const Home = () => {
         // opacity:'0.8'
         
         
-        
+
       }}
       />
+
 
     </Card>
   )
