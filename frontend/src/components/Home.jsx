@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card, CardMedia} from '@mui/material'
+
 const Home = () => {
   return (
     
@@ -19,14 +20,16 @@ const Home = () => {
     //   </div>
     // </div>
     <Card>
+     
       <CardMedia
       component="img"
       alt='Sample GIF'
       height="900"
-      image='https://cdn.dribbble.com/users/2560254/screenshots/5701893/media/c62a836c1cef8fd2880d78e25927e650.gif'
+     
+      image='https://cdn.dribbble.com/users/2118336/screenshots/12113942/media/ec72a5e052af7792a64a1f3fd156af28.gif'
       style={{ 
         borderRadius: '125px',
-        padding: '3%', 
+        padding: '5%', 
         display: 'flex',
         justifyContent: 'center',
         // opacity:'0.8'
