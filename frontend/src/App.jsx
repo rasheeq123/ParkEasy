@@ -27,6 +27,7 @@ function App() {
             <Route path="/bookslot" element={<UserAuth><BookSlot /></UserAuth>} />
             <Route path="/manageslot" element={<ManageSlots />} />
             <Route path="/about" element={<UserAuth><About /></UserAuth>} />
+            
           </Routes>
         </AppProvider>
       </BrowserRouter>
