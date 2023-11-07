@@ -28,6 +28,7 @@ function App() {
             <Route path="/manageslot" element={<ManageSlots />} />
             <Route path="/about" element={<UserAuth><About /></UserAuth>} />
             
+            
           </Routes>
         </AppProvider>
       </BrowserRouter>
