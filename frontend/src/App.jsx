@@ -29,6 +29,8 @@ function App() {
             <Route path="/about" element={<UserAuth><About /></UserAuth>} />
             
             
+
+            
           </Routes>
         </AppProvider>
       </BrowserRouter>
