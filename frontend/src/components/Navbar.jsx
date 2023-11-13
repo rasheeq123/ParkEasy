@@ -40,12 +40,12 @@ const Navbar = ({ mycart }) => {
         <div className="left" />
         <div className="right" />
       </div>
-            <li className="nav-item">
+            <li className="nav-item active">
               <NavLink className="nav-link" to="/">
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item active">
               <NavLink className="nav-link" to="/login">
                 Login
               </NavLink>
