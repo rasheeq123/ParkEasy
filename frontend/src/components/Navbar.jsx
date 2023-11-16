@@ -77,7 +77,6 @@ const Navbar = ({ mycart }) => {
               </li>
               {showLoginOption()}
             </ul>
-
           </div>
         </div>
       </nav >
