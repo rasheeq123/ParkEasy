@@ -19,6 +19,7 @@ const UserAuth = ({children}) => {
         });
         return <Navigate to="/login" />
     }
+    
 }
 
 export default UserAuth
