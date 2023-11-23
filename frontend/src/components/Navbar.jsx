@@ -24,7 +24,8 @@ const Navbar = ({ mycart }) => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            ParkEasy
+            ParkEasy  
+            <i className="bi bi-ev-front-fill"></i>
           </a>
           <button
             className="navbar-toggler"
