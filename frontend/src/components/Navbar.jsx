@@ -57,6 +57,7 @@ const Navbar = ({ mycart }) => {
                   Signup
                 </NavLink>
               </li>
+              
               <li className="nav-item">
                 <NavLink className="nav-link" to="/slotlist">
                   Slots
