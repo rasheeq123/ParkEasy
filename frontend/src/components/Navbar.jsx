@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import useAppContext from '../AppContext';
+import VanillaTilt from 'vanilla-tilt';
 
 
 const Navbar = ({ mycart }) => {
@@ -27,7 +28,7 @@ const Navbar = ({ mycart }) => {
         <div className="container-fluid ">
           <a className="navbar-brand" href="#">
 
-            <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill" data-title>
+            <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill" >
               ParkEasy <i className="bi bi-ev-front-fill"></i>
             </div>
           </a>
