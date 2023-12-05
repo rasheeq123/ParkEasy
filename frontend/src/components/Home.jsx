@@ -24,8 +24,11 @@ const Home = () => {
 
         />
 
-      </Card>
-      <Box sx={{ width: '100%' , align-items:'center'}}>
+      
+      <Typography gutterBottom variant="h3" component="div" align='center' marginTop='1%'>
+                    Booking
+                  </Typography>
+      <Box sx={{  alignItems:"center", margin:'5%', marginLeft:'22%'}}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
          
@@ -39,7 +42,7 @@ const Home = () => {
 
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography gutterBottom variant="h5" component="div" color={'whitesmoke'}>
                     Available Slots
                   </Typography>
 
@@ -61,13 +64,13 @@ const Home = () => {
                 <CardMedia
                   component="img"
 
-                  image="https://cdn.dribbble.com/users/730631/screenshots/2274680/media/9c377c62aa94b1181c3c6979792c396c.png"
+                  image="https://cdn.dribbble.com/users/484320/screenshots/4461961/media/71d74f376b237f29c8a8a3bb35187ac9.jpg"
                   borderRadius='500px'
 
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Available Slots
+                  <Typography gutterBottom variant="h5" component="div" color={'whitesmoke'}>
+                    Book Slot
                   </Typography>
 
                 </CardContent>
@@ -82,6 +85,7 @@ const Home = () => {
         </Grid>
       </Grid>
       </Box>
+      </Card>
 
     </div>
 
