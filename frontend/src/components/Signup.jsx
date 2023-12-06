@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import * as Yup from 'yup';
 
 
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
@@ -94,7 +95,6 @@ const Signup = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

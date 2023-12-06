@@ -13,7 +13,10 @@ const Navbar = ({ mycart }) => {
     if (loggedIn) {
       return (
         <li className="nav-item">
-          <button className='btn btn-danger' onClick={logout} >  Logout</button>
+          <div className="position-relative mt-2 py-1 px-3 text-bg-secondary border border-secondary rounded-pill">
+          <button className='btn btn-secondary' onClick={logout} >  Logout</button>
+                    </div>
+          
 
         </li>
       );

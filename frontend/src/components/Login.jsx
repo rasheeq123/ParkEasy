@@ -2,10 +2,11 @@ import { useFormik } from 'formik';
 import React from 'react'
 import Swal from 'sweetalert2';
 import useAppContext from '../AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    
-        const{ setloggedIn}= useAppContext();
+    const navigate = useNavigate();
+    const{ setloggedIn}= useAppContext();
 
 
   const loginform= useFormik ({
@@ -15,7 +16,7 @@ const Login = () => {
         email:'',
         password:''
     },
-    onSubmit: async (values)=> {
+    onSubmit: async (values, {resetForm})=> {
         console.log(values);
 
         const res = await fetch('http://localhost:5000/user/authenticate',{
@@ -32,6 +33,7 @@ const Login = () => {
                     title:'Login Successfully'
                     
                 })
+                navigate("/slotlist");
                 setloggedIn(true);
                 const data= await res.json();
                 console.log(data);
@@ -54,6 +56,7 @@ const Login = () => {
                 })
             
             }
+            resetForm();
     }
 });
 
