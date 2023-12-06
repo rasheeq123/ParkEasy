@@ -89,7 +89,6 @@ const Signup = () => {
                 <input id="confirm" onChange={signupform.handleChange} value={signupform.values.confirm} type="password" className='form-control mb-3' />
 
                 <button type="submit" className="btn btn-primary">Submit</button>
-
               </form>
             </div>
           </div>
