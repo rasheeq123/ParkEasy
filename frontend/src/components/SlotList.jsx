@@ -16,22 +16,23 @@ const SlotList = () => {
         const bookedSlots = data.map(slotData => slotData.slot);
         // console.log(bookedSlots);
         setExistSlots(
-            slotData.filter(slot => ( !bookedSlots.includes(slot.slot)  ))
+            slotData.filter(slot => (!bookedSlots.includes(slot.slot)))
         )
         // console.log(slotData.filter(slot => ( !bookedSlots.includes(slot.slot)  )));
     }
     useEffect(() => {
-        
+
         fetchSlots();
 
     }, [])
 
     return (
         <div>
+            
             <header>
                 <div className="container">
 
-                    <h1> Slots Available</h1>
+                    <h1 className='fw-bolder py-4'> <center>Slots Available</center></h1>
                 </div>
             </header>
             <div className="container">

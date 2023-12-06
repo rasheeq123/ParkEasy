@@ -99,7 +99,7 @@ const BookSlot = () => {
     }
 
     return (
-        <div className="py-5 vh-100 bg-body-secondary">
+        <div className="py-5 vh-100 ">
             <div className="col-md-4 mx-auto">
                 <div className="card">
                     <div className="card-body">

@@ -62,19 +62,19 @@ const Login = () => {
 
 
   return (
-    <div className="py-5 vh-100 bg-body-secondary">
+    <div className="py-5 vh-100 ">
             <div className="col-md-4 mx-auto">
-                <div className="card">
+                <div className="card ">
                     <div className="card-body">
-                        <h2 className="my-3">Login form</h2>
+                        <h2 className="my-3"><center>Login form</center></h2>
 
                         <form onSubmit={loginform.handleSubmit} >
 
                         
-                        <label>Email</label>
-                        <input id="email" onChange={loginform.handleChange} value={loginform.values.email} type="email" className='form-control mb-3' />
-                        <label>Password</label>
-                        <input id="password" onChange={loginform.handleChange} value={loginform.values.password} type="password" className='form-control mb-3' />
+                        <label className='fs-5 fw-semibold'>Email</label>
+                        <input id="email" onChange={loginform.handleChange} value={loginform.values.email} type="email" className='form-control mb-3 shadow p-3 mb-5 bg-body-tertiary rounded' />
+                        <label className='fs-5 fw-semibold'>Password</label>
+                        <input id="password" onChange={loginform.handleChange} value={loginform.values.password} type="password" className='form-control mb-3 shadow p-3 mb-5 bg-body-tertiary rounded' />
 
                         <button type="submit" className="btn btn-primary">Submit</button>
                         </form>

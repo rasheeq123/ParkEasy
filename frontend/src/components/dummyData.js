@@ -328,6 +328,38 @@ const slotData=[
         name:'',
         time:''
 
+    },
+    {
+        floor: 4,
+        slot: 141,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 4,
+        slot: 142,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 4,
+        slot: 143,
+        vehicle:'',
+        name:'',
+        time:''
+
+    },
+    {
+        floor: 4,
+        slot: 144,
+        vehicle:'',
+        name:'',
+        time:''
+
     }
 ];
 export default slotData;
