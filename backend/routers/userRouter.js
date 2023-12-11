@@ -36,7 +36,6 @@ router.get('/getbyemail/:email', (req, res) => {   // "/: url parameter"
 
 })
 
-
 router.get('/getbyid/:id', (req, res) => {
     Model.findById(req.params.id)
         .then((result) => {
