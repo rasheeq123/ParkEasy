@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import video from "../about_video.mp4"
 
 const Home = () => {
   return (
@@ -85,6 +86,19 @@ const Home = () => {
           </Grid>
         </Box>
       </Card>
+
+      <div id="main">
+      <div id="page-1">
+        <div className="cursor">
+        </div>
+      <video className="videoBg" autoPlay muted loop src={video}></video>
+      <div className="content vh-100">
+        <nav className="help">
+        </nav>
+        <h1 className="homeMainFont mb-5">VintiMart</h1>
+      </div>
+    </div>
+    </div>
 
     </div>
 
