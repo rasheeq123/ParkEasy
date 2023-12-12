@@ -10,6 +10,7 @@ import SlotList from './components/SlotList';
 import BookSlot from './components/BookSlot';
 import UserAuth from './UserAuth';
 import ManageSlots from './components/ManageSlots';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -28,10 +29,8 @@ function App() {
             <Route path="/manageslot" element={<ManageSlots />} />
             <Route path="/about" element={<UserAuth><About /></UserAuth>} />
             
-            
-
-            
           </Routes>
+          <Footer/>
         </AppProvider>
       </BrowserRouter>
     </div>
