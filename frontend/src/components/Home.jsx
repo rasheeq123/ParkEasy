@@ -6,10 +6,25 @@ import video from "../about_video.mp4"
 const Home = () => {
   return (
     <div>
+      <div>
+      <div>
+        <div>
+        </div>
+      <video className="videoHome " autoPlay muted loop src={video}></video>
+      <div className="content vh-100">
+        <nav className="help">
+        </nav>
+        <h1 className="homeMainFont mb-5">ParkEasy</h1>
+      </div>
+    </div>
+    </div>
+    
+    
+
 
       <Card >
 
-        <CardMedia
+        {/* <CardMedia
           component="img"
           alt='Sample GIF'
           height="900"
@@ -24,7 +39,7 @@ const Home = () => {
             // opacity:'0.8'
           }}
 
-        />
+        /> */}
 
 
 
@@ -87,19 +102,7 @@ const Home = () => {
         </Box>
       </Card>
 
-      <div id="main">
-      <div id="page-1">
-        <div className="cursor">
-        </div>
-      <video className="videoBg" autoPlay muted loop src={video}></video>
-      <div className="content vh-100">
-        <nav className="help">
-        </nav>
-        <h1 className="homeMainFont mb-5">VintiMart</h1>
-      </div>
-    </div>
-    </div>
-
+      
     </div>
 
 

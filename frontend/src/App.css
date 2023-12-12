@@ -43,4 +43,10 @@ path {
     100% {
       transform: rotate(-40deg);
     }
-  }  
+  } 
+  .videoHome{
+    height: 102%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
