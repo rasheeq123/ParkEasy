@@ -10,7 +10,7 @@ const Home = () => {
       <div>
         <div>
         </div>
-      <video className="videoHome " autoPlay muted loop src={video}></video>
+      <video className="videoHome " autoPlay  loop src={video}></video>
       <div className="content vh-100">
         <nav className="help">
         </nav>
