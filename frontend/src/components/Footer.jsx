@@ -10,7 +10,9 @@ const Footer = () => {
         <div className="col-sm-12 col-md-6">
           <h6>About</h6>
           <p className="text-justify">
-            VintiMart is for furniture lovers seeking to add a touch of elegance to their homes without breaking the bank. It extends a helping hand to those seeking to furnish their homes with dignity and grace also empowers both the furniture donor and the recipient, fostering a spirit of community and shared purpose
+          In the dynamic landscape of urban living, parking challenges have burgeoned into a prominent concern. ParkEasy seeks to introduce an innovative Online Parking Slot Booking System that leverages modern technologies to address urban 
+congestion. ParkEasy focuses on creating a robust and user-centric solution for efficient parking management by booking slots.
+
           </p>
         </div>
         <div className="col-xs-6 col-md-3">
