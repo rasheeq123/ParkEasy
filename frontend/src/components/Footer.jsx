@@ -15,36 +15,8 @@ congestion. ParkEasy focuses on creating a robust and user-centric solution for 
 
           </p>
         </div>
-        <div className="col-xs-6 col-md-3">
-          <h6>Categories</h6>
-          <ul className="footer-links">
-            <li>
-              <a href="/browsefurniture">Home Decor</a>
-            </li>
-            <li>
-              <a href="/browsefurniture">
-                Modern Furniture
-              </a>
-            </li>
-            <li>
-              <a href="/browsefurniture">
-                Vintage Article
-              </a>
-            </li>
-            <li>
-              <a href="/browsefurniture">
-                Browse Furniture
-              </a>
-            </li>
-            <li>
-              <a href="/browsefurniture">Top Discount</a>
-            </li>
-            <li>
-              <a href="/addfurniture">Sell Furniture</a>
-            </li>
-          </ul>
-        </div>
-        <div className="col-xs-6 col-md-3">
+        
+        <div className="col-xs-6 col-md-3 mx-auto">
           <h6>Quick Links</h6>
           <ul className="footer-links">
             <li>
