@@ -31,7 +31,7 @@ const Navbar = ({ mycart }) => {
         <div className="container-fluid ">
           <a className="navbar-brand" href="#">
 
-            <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill" >
+            <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill" data-tilt>
               ParkEasy <i className="bi bi-ev-front-fill"></i>
             </div>
           </a>

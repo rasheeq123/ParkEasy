@@ -19,22 +19,24 @@ congestion. ParkEasy focuses on creating a robust and user-centric solution for 
         <div className="col-xs-6 col-md-3 mx-auto">
           <h6>Quick Links</h6>
           <ul className="footer-links">
+          <li>
+              <a href="/slotlist">View Slots</a>
+            </li>
             <li>
               <a href="#">About Us</a>
             </li>
             <li>
-              <a href="/contact">Contact Us</a>
-            </li>
-            <li>
-              <a href="/browsefurniture">
-                Purchase
+              <a href="/bookslot">
+                Book Slot 
               </a>
             </li>
             <li>
-              <a href="/view">View Order</a>
+              <a href="/contact">Contact Us</a>
             </li>
+            
+            
             <li>
-              <a href="/cartpage">Cart</a>
+              <a href="/">Home</a>
             </li>
           </ul>
         </div>
