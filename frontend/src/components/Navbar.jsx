@@ -16,8 +16,6 @@ const Navbar = ({ mycart }) => {
           <div className="position-relative mt-2 py-1 px-3 text-bg-secondary border border-secondary rounded-pill">
             <button className='btn btn-secondary' onClick={logout} >  Logout</button>
           </div>
-
-
         </li>
       );
     }
