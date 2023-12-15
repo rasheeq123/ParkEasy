@@ -21,6 +21,24 @@ const Navbar = ({ mycart }) => {
         </li>
       );
     }
+    else{
+      return <>
+      <li className="nav-item active">
+                  <NavLink className="nav-link" to="/login">
+                    <div className="  position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
+                      Login
+                    </div>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/signup">
+                    <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
+                      SignUp
+                    </div>
+                  </NavLink>
+                </li>
+                </>
+    }
   }
 
 
@@ -48,20 +66,7 @@ const Navbar = ({ mycart }) => {
                     </div>
                   </NavLink>
                 </li>
-                <li className="nav-item active">
-                  <NavLink className="nav-link" to="/login">
-                    <div className="  position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
-                      Login
-                    </div>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/signup">
-                    <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
-                      SignUp
-                    </div>
-                  </NavLink>
-                </li>
+                
 
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/slotlist">
