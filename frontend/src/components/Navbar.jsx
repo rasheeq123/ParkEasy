@@ -14,9 +14,9 @@ const Navbar = ({ mycart }) => {
       return (
         <li className="nav-item">
           <div className="position-relative mt-2 py-1 px-3 text-bg-secondary border border-secondary rounded-pill">
-          <button className='btn btn-secondary' onClick={logout} >  Logout</button>
-                    </div>
-          
+            <button className='btn btn-secondary' onClick={logout} >  Logout</button>
+          </div>
+
 
         </li>
       );
@@ -92,14 +92,14 @@ const Navbar = ({ mycart }) => {
                     </div>
                   </NavLink>
                 </li>
-              
+
                 {showLoginOption()}
               </ul>
 
             </div>
-              <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill " data-tilt>
-                    ParkEasy <i className="bi bi-ev-front-fill"></i>
-                  </div>
+            <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill " data-tilt>
+              ParkEasy <i className="bi bi-ev-front-fill"></i>
+            </div>
           </div>
         </div>
       </nav >

@@ -54,19 +54,19 @@ congestion. ParkEasy focuses on creating a robust and user-centric solution for 
         <div className="col-md-4 col-sm-6 col-xs-12">
         <ul className="social-icons">
             <li>
-              <a className="github" href="https://github.com/omkarsharma2821">
-              <i class="fa-brands fa-github"></i>
+              <a className="github" href="https://github.com/rasheeq123">
+              <i class="bi bi-github"></i>
               </a>
             </li>
             <li>
-            <a className="instagram" href="https://instagram.com/omkarsharmaa_?igshid=MmVlMjlkMTBhMg==">
+            <a className="instagram" href="https://www.instagram.com/rizvi_rasheeq_7985/">
+            <i class="bi bi-instagram"></i>
 
-                 <i class="fa-brands fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a className="linkedin" href="https://www.linkedin.com/in/omkarsharmaa/">
-              <i class="fa-brands fa-linkedin"></i>
+              <a className="linkedin" href="https://www.linkedin.com/in/rasheeq-zehra-mern-developer/">
+              <i class="bi bi-linkedin"></i>
               </a>
             </li>
           </ul>
