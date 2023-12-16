@@ -19,6 +19,7 @@ const Navbar = ({ mycart }) => {
         </li>
       );
     }
+    
     else{
       return <>
       <li className="nav-item active">
