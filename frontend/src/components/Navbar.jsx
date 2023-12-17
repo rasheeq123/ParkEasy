@@ -19,6 +19,7 @@ const Navbar = ({ mycart }) => {
         </li>
       );
     }
+    
 
     else{
       return <>
