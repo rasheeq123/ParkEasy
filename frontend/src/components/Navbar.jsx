@@ -7,8 +7,6 @@ import VanillaTilt from 'vanilla-tilt';
 const Navbar = ({ mycart }) => {
 
   const { loggedIn, setloggedIn, logout } = useAppContext();
-
-
   const showLoginOption = () => {
     if (loggedIn) {
       return (
@@ -19,7 +17,7 @@ const Navbar = ({ mycart }) => {
         </li>
       );
     }
-    
+
 
     else{
       return <>
