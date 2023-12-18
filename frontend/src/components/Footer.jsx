@@ -67,6 +67,7 @@ congestion. ParkEasy focuses on creating a robust and user-centric solution for 
             <li>
               <a className="linkedin" href="https://www.linkedin.com/in/rasheeq-zehra-mern-developer/">
               <i class="bi bi-linkedin"></i>
+              
               </a>
             </li>
           </ul>
