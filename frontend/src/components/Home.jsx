@@ -101,13 +101,7 @@ const Home = () => {
           </Grid>
         </Box>
       </Card>
-
-      
     </div>
-
-
-
-
 
   )
 }
