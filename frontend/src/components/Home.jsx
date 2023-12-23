@@ -23,26 +23,6 @@ const Home = () => {
 
 
       <Card >
-
-        {/* <CardMedia
-          component="img"
-          alt='Sample GIF'
-          height="900"
-          text="hello"
-          image='https://cdn.dribbble.com/users/2118336/screenshots/12113942/media/ec72a5e052af7792a64a1f3fd156af28.gif'
-          style={{
-            borderRadius: '125px',
-            padding: '5%',
-            display: 'flex',
-            justifyContent: 'center',
-
-            // opacity:'0.8'
-          }}
-
-        /> */}
-
-
-
         <Typography gutterBottom variant="h3" component="div" align='center' marginTop='1%'>
           Booking
         </Typography>
