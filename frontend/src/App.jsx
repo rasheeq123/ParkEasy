@@ -11,6 +11,7 @@ import BookSlot from './components/BookSlot';
 import UserAuth from './UserAuth';
 import ManageSlots from './components/ManageSlots';
 import Footer from './components/Footer';
+import NotFound from './components/Notfound';
 
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
             <Route path="/slotlist" element={<UserAuth><SlotList /> </UserAuth>} />
             <Route path="/bookslot" element={<UserAuth><BookSlot /></UserAuth>} />
             <Route path="/manageslot" element={<ManageSlots />} />
+            
             <Route path="/about" element={<UserAuth><About /></UserAuth>} />
+            <Route path="*" element={<NotFound />} />
             
           </Routes>
           <Footer/>
