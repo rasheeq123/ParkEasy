@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
-
-
 const ManageSlots = () => {
-
   const [userList, setuserList] = useState([])
-
   const fetchSlots = async () => {
     const res = await fetch('http://localhost:5000/parkings/getall')
     console.log(res.status);
@@ -16,9 +12,7 @@ const ManageSlots = () => {
   }
   useEffect(() => {
     // when component opens
-
     fetchSlots();
-
   }, [])
 
   const deleteparkings=async (id)=>{
