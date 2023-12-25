@@ -11,13 +11,13 @@ const ManageSlots = () => {
     setuserList(data);
   }
   useEffect(() => {
-    // when component opens
+    
     fetchSlots();
   }, [])
 
   const deleteparkings=async (id)=>{
     console.log(id);
-    //fetch
+    
     const res=await fetch('http://localhost:5000/parkings/delete/'+ id, { 
         method: 'DELETE',
         
