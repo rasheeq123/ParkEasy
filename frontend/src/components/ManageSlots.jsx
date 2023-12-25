@@ -32,12 +32,8 @@ const ManageSlots = () => {
  if(res.status===200){
   fetchSlots();
     toast.success('Slot Deleted Successfully');
-
-
  }
 };
-
-
   return (
     <div className="vh-100 ">
       <div className="container py-4">
