@@ -70,7 +70,6 @@ const Login = () => {
                         <input id="email" onChange={loginform.handleChange} value={loginform.values.email} type="email" className='form-control mb-3 shadow p-3 mb-5 bg-body-tertiary rounded' />
                         <label className='fs-5 fw-semibold'>Password</label>
                         <input id="password" onChange={loginform.handleChange} value={loginform.values.password} type="password" className='form-control mb-3 shadow p-3 mb-5 bg-body-tertiary rounded' />
-
                         <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
