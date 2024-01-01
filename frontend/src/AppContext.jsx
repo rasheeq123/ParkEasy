@@ -14,7 +14,6 @@ export const AppProvider=({children})=>{
         
     };
 
-
      return <AppContext.Provider value={{loggedIn, setloggedIn, logout}}> 
      {/* // value ka mtlb jab tk yaha bataenge(provide) nhi tb tk bahar dikhega nhi */}
         {children}

@@ -18,8 +18,7 @@ const UserAuth = ({children}) => {
             text:'You need to Login first'
         });
         return <Navigate to="/login" />
-    }
-    
+    }   
 }
 
 export default UserAuth
