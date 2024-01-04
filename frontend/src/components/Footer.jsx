@@ -28,6 +28,7 @@ const Footer = () => {
                 <li>
                   <a href="/bookslot">
                     Book Slot
+                    
                   </a>
                 </li>
                 <li>
