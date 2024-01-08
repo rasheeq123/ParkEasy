@@ -14,7 +14,6 @@ const Footer = () => {
                 congestion. ParkEasy focuses on creating a robust and user-centric solution for efficient parking management by booking slots.
               </p>
             </div>
-      
             <div className="col-xs-6 col-md-3 mx-auto">
               <h6>Quick Links</h6>
               <ul className="footer-links">
@@ -26,8 +25,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="/bookslot">
-                    Book Slot
-                    
+                    Book Slot   
                   </a>
                 </li>
                 <li>
