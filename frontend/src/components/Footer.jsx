@@ -3,6 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
+    
       {/* Site footer */}
       <footer className="site-footer mt-5">
         <div className="container">
