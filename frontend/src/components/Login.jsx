@@ -17,7 +17,7 @@ const Login = () => {
     onSubmit: async (values, {resetForm})=> {
         console.log(values);
 
-        const res = await fetch('${process.env.REACT_APP_PARKEASY_URL}/user/authenticate',{
+        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/authenticate`,{
             method: 'POST',
             body:JSON.stringify(values),
             headers:{

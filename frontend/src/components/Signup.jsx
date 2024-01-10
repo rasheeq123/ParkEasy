@@ -32,7 +32,7 @@ const Signup = () => {
     onSubmit: async (values, { resetForm }) => {
       console.log(values);
       
-      const res = await fetch('${process.env.REACT_APP_PARKEASY_URL}/user/add', {
+      const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/add`, {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {

@@ -25,7 +25,7 @@ const BookSlot = () => {
 
 
     const fetchbookedSlots = async () => {
-        const res = await fetch('${process.env.REACT_APP_PARKEASY_URL}/user/getall')
+        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/getall`)
         console.log(res.status);
         const data = await res.json();
         const bookedslots = data.map(slotData => slotData.slot);
