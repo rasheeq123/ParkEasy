@@ -18,7 +18,7 @@ const ManageSlots = () => {
   const deleteparkings=async (id)=>{
     console.log(id);
     
-    const res=await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/delete/`+ id, { 
+    const res=await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/delete/${id}`, { 
         method: 'DELETE',
         
  });
