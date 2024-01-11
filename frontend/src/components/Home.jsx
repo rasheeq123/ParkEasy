@@ -1,10 +1,5 @@
 import React from 'react'
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Grid, Paper, Typography } from '@mui/material'
-import { Link, NavLink } from 'react-router-dom'
-import video from "../about_video.mp4"
-import styled from '@emotion/styled'
-
-
+import {  Grid, Paper, Typography } from '@mui/material'
 
 const Home = () => {
   return (
@@ -43,11 +38,30 @@ const Home = () => {
           Book your parking slot!
         </Typography>
         
-        {/* container started  */}
-        <Grid container>
-          <Grid item>
-            <Paper>1</Paper>
+      {/*--------------- container started ------------------ */}
+      
+      <Grid container>
+          <Grid item xs={12} sm={6} md={6}>
+          <Paper elevation={3} style={{ padding: 20 }}>
+          
+          <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
+          <Typography variant="h6">Explore Slots</Typography>
+          <Typography variant="body2">Uncover the possibilities! Navigate through available slots at various positions effortlessly!</Typography>
+        </Paper>
           </Grid>
+
+          {/* second container */}
+
+          <Grid item xs={12} sm={6} md={6}>
+          <Paper elevation={3} style={{ padding: 20 }}>
+          
+          <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
+          <Typography variant="h6">Book Slot</Typography>
+          <Typography variant="body2">Your parking, your way! Choose your floor, slot number, input vehicle details, and preferred time – effortlessly secure your parking spot with a seamless booking experience. Your stress-free parking reservation begins here!</Typography>
+        </Paper>
+          </Grid>
+
+
         </Grid>
 
         
