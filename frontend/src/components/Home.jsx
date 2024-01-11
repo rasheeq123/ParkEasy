@@ -1,88 +1,145 @@
 import React from 'react'
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
+import { Link, NavLink } from 'react-router-dom'
 import video from "../about_video.mp4"
 
 const Home = () => {
   return (
-    <div>
-      <div>
-      <div>
-        <div>
-        </div>
-      <video className="videoHome " autoPlay  loop src={video}></video>
-      <div className="content vh-100">
-        <nav className="help">
-        </nav>
-        <h1 className="homeMainFont mb-5">ParkEasy</h1>
-      </div>
-    </div>
-    </div>
+    <>
     
-    
-
-
-      <Card >
-        <Typography gutterBottom variant="h3" component="div" align='center' marginTop='1%'>
-          Booking
+    <div
+        className="bghome"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center", // Vertical centering
+          alignItems: "center", // Horizontal centering
+          backgroundAttachment: "fixed",
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('/images/A14.png')`,
+          
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100%",
+          backgroundPosition: 'center',
+          height: "100vh",
+        }}
+      >
+        <Typography
+          variant="h1"
+          mt={0}
+          sx={{ color: "white", textAlign: "center", fontSize: "10vw",textShadow: '5px 5px 5px rgba(0, 0, 0, 0.8)' }}
+          // sx={{ color: "rgb(121, 158, 42)", textAlign: "center", fontSize: "10vw",textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
+        >
+          ParkEasy{" "}
         </Typography>
-        <Box sx={{ alignItems: "center", margin: '5%', marginLeft: '22%' }}>
-          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-            <Grid item xs={6}>
-
-              <Card sx={{ maxWidth: 300, height: 350, backgroundColor: '#212529' }}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-
-                    image="https://cdn.dribbble.com/users/730631/screenshots/2274680/media/9c377c62aa94b1181c3c6979792c396c.png"
-                    borderRadius='500px'
-
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" color={'whitesmoke'}>
-                      Available Slots
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions sx={{ marginTop: '-15px' }}>
-                  <Button component={Link} to="/slotlist" variant='contained' size="medium" color="secondary">
-                    Explore
-                  </Button>
-                </CardActions>
-              </Card>
+        <Typography
+          variant="h3"
+          sx={{ color: "white", textAlign: "center", fontSize: "3vw",textShadow: '4px 4px 4px rgba(0, 0, 0, 0.8)' }}
+        >
+          Paving the Way for Hassle-Free Parking
+        </Typography>
+      </div>
+        <Typography variant="h2" textAlign={"center"} sx={{ mt: 5,mb:10 }}>
+          Book your parking slot!
+        </Typography>
+        <Container>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          >
+            {/* <Grid xs={6} > */}
+            <Grid item xs={12} sm={6}>
+              <Box
+                sx={{
+                  // mt: 5,
+                  width: "480px",
+                  height: "500px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  // alignItems: "center",
+                }}
+              >
+                <Typography variant="h3" fontWeight='semibold' mb={2}>Explore Slots</Typography>
+                <Typography variant="h4" mb={0}>Uncover the possibilities! Navigate through available slots at various positions effortlessly!</Typography>
+                <NavLink to="/user">
+                <Button sx={{textTransform:'none',borderRadius:'28px',mt:4,width:'60%',fontSize:'25px',py:1}} variant='contained' color='primary'>Get a free diagnosis</Button>
+                </NavLink>
+              </Box>
             </Grid>
-
-            <Grid item xs={6}>
-              <Card sx={{ maxWidth: 300, height: 350, backgroundColor: '#212529' }}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-
-                    image="https://cdn.dribbble.com/users/484320/screenshots/4461961/media/71d74f376b237f29c8a8a3bb35187ac9.jpg"
-                    borderRadius='500px'
-
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" color={'whitesmoke'}>
-                      Book Slot
-                    </Typography>
-
-                  </CardContent>
-                </CardActionArea>
-                <CardActions sx={{ marginTop: '-15px' }}>
-                  <Button component={Link} to="/bookslot" variant='contained' size="medium" color="secondary">
-                    Click here
-                  </Button>
-                </CardActions>
-              </Card>
-
+            {/* <Grid xs={6}> */}
+            <Grid item xs={12} sm={6}>
+              <Container
+               sx={{display: "flex",
+               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('/images/G1.jpg')`,
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: 2,
+                  minHeight: 500,
+                  width:'100%',
+                  // m:5,
+                  // mt:10,
+                  // backgroundSize: '100% 100%', // Cover the entire Paper
+                  backgroundSize: "cover",
+                  backgroundPosition: 'center',
+                  }}
+                >
+                </Container>
             </Grid>
           </Grid>
-        </Box>
-      </Card>
-    </div>
-
+        </Container>
+        <Container sx={{mt:18,}}>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          >
+            
+            {/* <Grid xs={6}> */}
+            <Grid item xs={12} sm={6}>
+              <Container
+               sx={{display: "flex",
+               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('/images/G2.jpg')`,
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: 2,
+                  minHeight: 500,
+                  width:'100%',
+                  // m:5,
+                  // mt:10,
+                  // backgroundSize: '100% 100%', // Cover the entire Paper
+                  backgroundSize: "cover",
+                  backgroundPosition: 'center',
+                  }}
+                >
+                </Container>
+            </Grid>
+            {/* <Grid xs={6}> */}
+            <Grid item xs={12} sm={6}>
+              <Box
+                sx={{
+                  // m:10,
+                  width: "480px",
+                  height: "500px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  // alignItems: "center",
+                }}
+              >
+                <Typography variant="h3" mb={2} fontWeight='semibold'>Book Slot</Typography>
+                <Typography mb={0} variant="h4">Your parking, your way! Choose your floor, slot number, input vehicle details, and preferred time – effortlessly secure your parking spot with a seamless booking experience. Your stress-free parking reservation begins here!</Typography>
+                <NavLink to="/user">
+                <Button sx={{textTransform:'none',borderRadius:'28px',mt:4,mb:1,width:'60%',fontSize:'25px',py:1}} variant='contained' color='primary'>Get a free treatment</Button>
+                </NavLink>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+    
+    </>
   )
 }
 
