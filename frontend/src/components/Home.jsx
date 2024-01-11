@@ -44,7 +44,12 @@ const Home = () => {
         </Typography>
         
         {/* container started  */}
-        
+        <Grid container>
+          <Grid item>
+            <Paper>1</Paper>
+          </Grid>
+        </Grid>
+
         
         
     
