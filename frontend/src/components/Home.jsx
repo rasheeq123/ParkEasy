@@ -1,11 +1,12 @@
 import React from 'react'
-import {  Grid, Paper, ThemeProvider, Typography, createTheme, styled } from '@mui/material'
-
+import {  Button, Grid, Paper, ThemeProvider, Typography, createTheme, styled } from '@mui/material'
+import {NavLink} from 'react-router-dom'
 
 const theme = createTheme();
 
 const StyledPaper = styled(Paper)({
-  padding: theme.spacing(2),
+  padding: theme.spacing(1),
+  border: '1 px solid black',
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
     
@@ -19,7 +20,10 @@ const StyledPaper = styled(Paper)({
     transition: 'transform 0.2s ease-in-out', // Added transition for the image
     transform: 'scale(1)', // Set the default scale
   },
+  width: '60%', // Adjust the width as needed
+  margin: 'auto', // Center the Paper within the Grid item
 });
+
 
 
 const Home = () => {
@@ -61,29 +65,46 @@ const Home = () => {
         
       {/*--------------- container started ------------------ */}
       <ThemeProvider theme={theme}>
-      <Grid container spacing={3} >
-          <Grid item xs={12} sm={6} md={6} >
+      <Grid container  alignItems="stretch" justifyContent="center">
+          <Grid item xs={12} sm={4}  md={4} >
           <StyledPaper>
           
           
           <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Explore Slots</Typography>
           <Typography variant="body2">Uncover the possibilities! Navigate through available slots at various positions effortlessly, in a single click!</Typography>
-          
+          <NavLink to="/slot">
+                <Button sx={{textTransform:'none',borderRadius:'18px',mt:3,mb:1,width:'30%',fontSize:'15px',py:1}} variant='contained' color='secondary'>View Slots</Button>
+                </NavLink>
           </StyledPaper>
            </Grid>
           
 
           {/* second container */}
 
-          <Grid item xs={12} sm={6} md={6}  >
+          <Grid item xs={12} sm={4} md={4}  >
           <StyledPaper>
           
           
           <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Book Slot</Typography>
           <Typography variant="body2"> Choose your floor, slot number, input vehicle details, preferred time & effortlessly secure your parking spot with a seamless booking experience. </Typography>
-       
+          <NavLink to="/bookslot">
+                <Button sx={{textTransform:'none',borderRadius:'18px',mt:3,mb:1,width:'30%',fontSize:'15px',py:1}} variant='contained' color='secondary'>Book Slot</Button>
+                </NavLink>
+        </StyledPaper>
+          </Grid>
+
+          {/* --------------third container */}
+
+          <Grid item xs={12} sm={4}  md={4}  >
+          <StyledPaper>
+          <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
+          <Typography variant="h6">Book Slot</Typography>
+          <Typography variant="body2"> Choose your floor, slot number, input vehicle details, preferred time & effortlessly secure your parking spot with a seamless booking experience. </Typography>
+          <NavLink to="/bookslot">
+                <Button sx={{textTransform:'none',borderRadius:'18px',mt:3,mb:1,width:'30%',fontSize:'15px',py:1}} variant='contained' color='secondary'>Book Slot</Button>
+                </NavLink>
         </StyledPaper>
           </Grid>
 
