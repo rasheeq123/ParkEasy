@@ -60,9 +60,10 @@ const Login = () => {
 
 
   return (
-    <div className="py-5 vh-100 ">
-            <div className="col-md-4 mx-auto">
-                <div className="card ">
+    <div className=" py-5 vh-100 d-flex bg-dark" >
+        <img src='\images\A1.png' className='background-image-login'/>
+            <div className="col-md-6 ms-auto  ">
+                <div className="card card-design-login  ">
                     <div className="card-body">
                         <h2 className="my-3"><center>Login form</center></h2>
                         <form onSubmit={loginform.handleSubmit} >
