@@ -1,5 +1,26 @@
 import React from 'react'
-import {  Grid, Paper, Typography } from '@mui/material'
+import {  Grid, Paper, ThemeProvider, Typography, createTheme, styled } from '@mui/material'
+
+
+const theme = createTheme();
+
+const StyledPaper = styled(Paper)({
+  padding: theme.spacing(2),
+  transition: 'transform 0.3s ease-in-out',
+  '&:hover': {
+    
+      transform: 'scale(0.9)', // Adjust the scale factor as needed
+    
+  },
+  '& img': {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    transition: 'transform 0.2s ease-in-out', // Added transition for the image
+    transform: 'scale(1)', // Set the default scale
+  },
+});
+
 
 const Home = () => {
   return (
@@ -39,30 +60,36 @@ const Home = () => {
         </Typography>
         
       {/*--------------- container started ------------------ */}
-      
-      <Grid container>
-          <Grid item xs={12} sm={6} md={6}>
-          <Paper elevation={3} style={{ padding: 20 }}>
+      <ThemeProvider theme={theme}>
+      <Grid container spacing={3} >
+          <Grid item xs={12} sm={6} md={6} >
+          <StyledPaper>
+          
           
           <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Explore Slots</Typography>
-          <Typography variant="body2">Uncover the possibilities! Navigate through available slots at various positions effortlessly!</Typography>
-        </Paper>
-          </Grid>
+          <Typography variant="body2">Uncover the possibilities! Navigate through available slots at various positions effortlessly, in a single click!</Typography>
+          
+          </StyledPaper>
+           </Grid>
+          
 
           {/* second container */}
 
-          <Grid item xs={12} sm={6} md={6}>
-          <Paper elevation={3} style={{ padding: 20 }}>
+          <Grid item xs={12} sm={6} md={6}  >
+          <StyledPaper>
+          
           
           <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Book Slot</Typography>
-          <Typography variant="body2">Your parking, your way! Choose your floor, slot number, input vehicle details, and preferred time – effortlessly secure your parking spot with a seamless booking experience. Your stress-free parking reservation begins here!</Typography>
-        </Paper>
+          <Typography variant="body2"> Choose your floor, slot number, input vehicle details, preferred time & effortlessly secure your parking spot with a seamless booking experience. </Typography>
+       
+        </StyledPaper>
           </Grid>
 
 
         </Grid>
+        </ThemeProvider>
 
         
         
