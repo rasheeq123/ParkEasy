@@ -65,7 +65,7 @@ const Home = () => {
         
       {/*--------------- container started ------------------ */}
       <ThemeProvider theme={theme}>
-      <Grid container  >
+      <Grid container spacing={5} >
           <Grid item xs={12} sm={4}  md={4} >
           <StyledPaper>
           

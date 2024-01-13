@@ -60,23 +60,60 @@ const Login = () => {
 
 
   return (
-    <div className=" py-5 vh-100 d-flex bg-dark" >
-        <img src='\images\A1.png' className='background-image-login'/>
-            <div className="col-md-6 ms-auto  ">
-                <div className="card card-design-login  shadow">
-                    <div className="card-body">
-                        <h2 className="my-3"><center>Login form</center></h2>
-                        <form onSubmit={loginform.handleSubmit} >
-                        <label className='fs-5 fw-semibold'>Email</label>
-                        <input id="email" onChange={loginform.handleChange} value={loginform.values.email} type="email" className='form-control mb-3 shadow p-3 mb-5  rounded' />
-                        <label className='fs-5 fw-semibold'>Password</label>
-                        <input id="password" onChange={loginform.handleChange} value={loginform.values.password} type="password" className='form-control mb-3 shadow p-3 mb-5 bg-body-tertiary rounded' />
+    <div className="container-fluid py-5 d-flex justify-content-center align-items-center">
+    {/* Left Column for Image */}
+    <div className="col-md-6">
+        <img src="/images/A1.png" className="img-fluid background-image-login" alt="Background" />
+    </div>
+
+    {/* Right Column for Login Form */}
+    <div className="col-md-6">
+        <div className="card card-design-login shadow">
+            <div className="card-body">
+                <h2 className="my-3 text-center">Login form</h2>
+                <form onSubmit={loginform.handleSubmit}>
+                    <label className="fs-5 fw-semibold">Email</label>
+                    <input
+                        id="email"
+                        onChange={loginform.handleChange}
+                        value={loginform.values.email}
+                        type="email"
+                        className="form-control mb-3 shadow p-3 mb-5 rounded"
+                    />
+                    <label className="fs-5 fw-semibold">Password</label>
+                    <input
+                        id="password"
+                        onChange={loginform.handleChange}
+                        value={loginform.values.password}
+                        type="password"
+                        className="form-control mb-3 shadow p-3 mb-5 rounded"
+                    />
+                    <div className="d-grid">
                         <button type="submit" className="btn btn-primary">Submit</button>
-                        </form>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
+
+    // <div className=" py-5 vh-100 d-flex bg-dark" >
+    //     <img src='\images\A1.png' className='background-image-login'/>
+    //         <div className="col-md-6 ms-auto  ">
+    //             <div className="card card-design-login  shadow">
+    //                 <div className="card-body">
+    //                     <h2 className="my-3"><center>Login form</center></h2>
+    //                     <form onSubmit={loginform.handleSubmit} >
+    //                     <label className='fs-5 fw-semibold'>Email</label>
+    //                     <input id="email" onChange={loginform.handleChange} value={loginform.values.email} type="email" className='form-control mb-3 shadow p-3 mb-5  rounded' />
+    //                     <label className='fs-5 fw-semibold'>Password</label>
+    //                     <input id="password" onChange={loginform.handleChange} value={loginform.values.password} type="password" className='form-control mb-3 shadow p-3 mb-5 bg-body-tertiary rounded' />
+    //                     <button type="submit" className="btn btn-primary">Submit</button>
+    //                     </form>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
   )
 }
 
