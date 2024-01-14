@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Button, Grid, Paper, ThemeProvider, Typography, createTheme, styled } from '@mui/material'
+import {  Button, Container, Grid, Paper, ThemeProvider, Typography, createTheme, styled } from '@mui/material'
 import {NavLink} from 'react-router-dom'
 
 const theme = createTheme();
@@ -20,7 +20,7 @@ const StyledPaper = styled(Paper)({
     transition: 'transform 0.1s ease-in-out', // Added transition for the image
     transform: 'scale(1)', // Set the default scale
   },
-  width: '60%', // Adjust the width as needed
+  // width: '60%', // Adjust the width as needed
   margin: 'auto', // Center the Paper within the Grid item
 });
 
@@ -65,7 +65,8 @@ const Home = () => {
         
       {/*--------------- container started ------------------ */}
       <ThemeProvider theme={theme}>
-      <Grid container spacing={5} >
+        <Container>
+      <Grid container spacing={9}  >
           <Grid item xs={12} sm={4}  md={4} >
           <StyledPaper>
           
@@ -110,6 +111,7 @@ const Home = () => {
 
 
         </Grid>
+        </Container>
         </ThemeProvider>
 
         
