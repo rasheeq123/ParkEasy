@@ -241,3 +241,19 @@ margin-left: 6%;
   margin-right: 36%;
   margin-top: 13%;
 }
+
+/* Login styles.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-design-login {
+  animation: fadeIn 0.8s ease-in-out;
+}
