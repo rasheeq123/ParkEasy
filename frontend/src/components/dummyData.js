@@ -360,10 +360,18 @@ const slotData=[
         name:'',
         time:''
 
-    }
+    },
     {
         floor: 4,
         slot: 145,
+        vehicle:'',
+        name:'',
+        time:''
+
+    }
+    {
+        floor: 4,
+        slot: 146,
         vehicle:'',
         name:'',
         time:''
