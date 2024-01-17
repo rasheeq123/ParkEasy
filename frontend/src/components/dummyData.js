@@ -368,7 +368,7 @@ const slotData=[
         name:'',
         time:''
 
-    }
+    },
     {
         floor: 4,
         slot: 146,
