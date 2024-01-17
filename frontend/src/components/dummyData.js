@@ -361,5 +361,13 @@ const slotData=[
         time:''
 
     }
+    {
+        floor: 4,
+        slot: 145,
+        vehicle:'',
+        name:'',
+        time:''
+
+    }
 ];
 export default slotData;
