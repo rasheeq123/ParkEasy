@@ -69,8 +69,6 @@ const Home = () => {
       <Grid container spacing={9}  >
           <Grid item xs={12} sm={4}  md={4} >
           <StyledPaper>
-          
-          
           <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Login</Typography>
           <Typography variant="body2">Login to our platform effortlessly! Enter your credentials,and enjoy a smooth entry into the world of Parking. Your stress-free parking reservation begins here!</Typography>
