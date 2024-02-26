@@ -12,7 +12,7 @@ const StyledPaper = styled(Paper)({
     
       transform: 'scale(1.1)', // Adjust the scale factor as needed
   },
-  
+
   '& img': {
     width: '100%',
     height: 'auto',
@@ -23,8 +23,6 @@ const StyledPaper = styled(Paper)({
   // width: '60%', // Adjust the width as needed
   margin: 'auto', // Center the Paper within the Grid item
 });
-
-
 
 const Home = () => {
   return (
