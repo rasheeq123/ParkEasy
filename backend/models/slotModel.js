@@ -5,7 +5,7 @@ const slotschema = new Schema({
     slot: Number,
     vehicle : String,
     time: Date,
-    user: {type : Types.ObjectId, ref: 'user'}
+    user: {type : Types.ObjectId, ref: 'user' }
 });
 
 module.exports=model('parkings', slotschema);
