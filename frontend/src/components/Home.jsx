@@ -11,7 +11,6 @@ const StyledPaper = styled(Paper)({
   '&:hover': {
       transform: 'scale(1.1)', // Adjust the scale factor as needed
   },
-
   '& img': {
     width: '100%',
     height: 'auto',
