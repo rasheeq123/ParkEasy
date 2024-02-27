@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom'
 const theme = createTheme();
 
 const StyledPaper = styled(Paper)({
-  padding: theme.spacing(1),
+  padding: theme.spacing( 1 ),
   border: '1 px solid black',
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
@@ -16,7 +16,7 @@ const StyledPaper = styled(Paper)({
     width: '100%',
     height: 'auto',
     display: 'block',
-    
+
     transition: 'transform 0.1s ease-in-out', // Added transition for the image
     transform: 'scale(1)', // Set the default scale
   },
