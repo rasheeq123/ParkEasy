@@ -9,7 +9,6 @@ const StyledPaper = styled(Paper)({
   border: '1 px solid black',
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
-    
       transform: 'scale(1.1)', // Adjust the scale factor as needed
   },
 
@@ -17,6 +16,7 @@ const StyledPaper = styled(Paper)({
     width: '100%',
     height: 'auto',
     display: 'block',
+    
     transition: 'transform 0.1s ease-in-out', // Added transition for the image
     transform: 'scale(1)', // Set the default scale
   },
