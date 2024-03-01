@@ -8,7 +8,7 @@ const SlotList = () => {
     const [existSlots, setExistSlots] = useState([]);
 
     const fetchSlots = async () => {
-        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/dummy/getall`)
+        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/dummyData/getall`)
         console.log(res.status);
         const data = await res.json(); // data fetch krne ke lie
         console.table(data);
