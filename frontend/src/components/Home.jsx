@@ -73,7 +73,7 @@ const Home = () => {
           <img src="https://cdn.dribbble.com/users/2548965/screenshots/5747061/media/a1f6a7b3d1f799410657409c1a49f270.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Login</Typography>
           <Typography variant="body2">Login to our platform effortlessly! Enter your credentials,and enjoy a smooth entry into the world of Parking. Your stress-free parking reservation begins here!</Typography>
-          <NavLink to="/slot">
+          <NavLink to="/login">
                 <Button sx={{textTransform:'none',borderRadius:'18px',mt:3,mb:1,width:'40%',fontSize:'15px',py:1}} variant='contained' color='secondary'>Login</Button>
                 </NavLink>
           </StyledPaper>
@@ -89,7 +89,7 @@ const Home = () => {
           <img src="https://cdn.dribbble.com/users/6153591/screenshots/14332697/media/be3e2e5ebad63d1c6778dba2f96427f5.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Explore Slots</Typography>
           <Typography variant="body2">Uncover the possibilities! Navigate through available slots at various positions effortlessly, in a single click!</Typography>
-          <NavLink to="/slot">
+          <NavLink to="/slotlist">
                 <Button sx={{textTransform:'none',borderRadius:'18px',mt:3,mb:1,width:'40%',fontSize:'15px',py:1}} variant='contained' color='secondary'>View Slots</Button>
                 </NavLink>
           </StyledPaper>
