@@ -9,7 +9,6 @@ const UserAuth = ({children}) => {
     );
     if(currentuser!==null){
         return children;
-
     }
     else{
         Swal.fire({

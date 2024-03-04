@@ -28,14 +28,13 @@ const BookSlot = () => {
         const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/getall`)
         console.log(res.status);
         const data = await res.json();
+        console.log(data);
         const bookedslots = data.map(slotData => slotData.slot);
         setSlotsAvailable(slotsAvailable.filter(slotNum => !bookedslots.includes(slotNum) ))
     }
-
     useEffect(() => {
         fetchbookedSlots();
     }, [])
-
 
     const { setloggedIn } = useAppContext();
     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')))
