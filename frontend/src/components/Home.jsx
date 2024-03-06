@@ -85,7 +85,6 @@ const Home = () => {
           <Grid item xs={12} sm={4}  md={4} >
           <StyledPaper>
           
-          
           <img src="https://cdn.dribbble.com/users/6153591/screenshots/14332697/media/be3e2e5ebad63d1c6778dba2f96427f5.jpg" alt="Container 2" style={{ width: '100%', marginBottom: 10 }} />
           <Typography variant="h6">Explore Slots</Typography>
           <Typography variant="body2">Uncover the possibilities! Navigate through available slots at various positions effortlessly, in a single click!</Typography>
