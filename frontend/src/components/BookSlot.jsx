@@ -11,7 +11,7 @@ const BookSchema = Yup.object().shape({
 
    slot: Yup.number().min(0, 'Invalid!')
    .required('Required'),
-   
+
    vehicle: Yup.string().min(9, 'Invalid!')
    .max(12, 'Invalid!').required('Required'),
    
