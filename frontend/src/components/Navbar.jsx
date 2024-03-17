@@ -46,6 +46,7 @@ const Navbar = ({ mycart }) => {
       <nav className="navbar navbar-expand-lg  bg-dark navbar-dark " >
         <div className="container-fluid ">
           <a className="navbar-brand" href="#">
+            
 
             <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill" data-tilt>
               ParkEasy <i className="bi bi-ev-front-fill"></i>
@@ -99,9 +100,7 @@ const Navbar = ({ mycart }) => {
               </ul>
 
             </div>
-            <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill " data-tilt>
-              ParkEasy <i className="bi bi-ev-front-fill"></i>
-            </div>
+           
           </div>
         </div>
       </nav >

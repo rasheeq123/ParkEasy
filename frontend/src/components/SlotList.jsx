@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import slotData from './dummyData'
+import { NavLink, useHistory } from 'react-router-dom'
+import { Button } from '@mui/material'
 
 const SlotList = () => {
 
@@ -29,7 +31,7 @@ const SlotList = () => {
 
     return (
         <div>
-            
+
             <header>
                 <div className="container">
 
@@ -43,7 +45,12 @@ const SlotList = () => {
                             <div className="card py-2 mt-4 text-center">
                                 <h5>Floor: {item.floor}</h5>
                                 <h5>Slot No: {item.slot}</h5>
-                                <button onClick={() => console.log(`Button ${index + 1} clicked`)}>Book  </button>
+                                <NavLink to="/bookslot">
+                                <Button sx={{textTransform:'none',borderRadius:'18px',mt:3,mb:1,width:'70%',fontSize:'15px',py:1}} variant='contained' color='secondary'>Book</Button>
+                                
+                                    
+                                
+                                </NavLink> 
                             </div>
                         </div>
                     ))}
