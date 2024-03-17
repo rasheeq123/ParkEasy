@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import useAppContext from '../AppContext';
-import VanillaTilt from 'vanilla-tilt';
+
 
 
 const Navbar = ({ mycart }) => {

@@ -7,20 +7,20 @@ const cors = require('cors');
 
 // initialize express
 const app=express();
-const port= 4000;
+const port= 5000;
 
 //middleware: request aane pe uska data access kr skte h, modify krte h lekin response nhi generate kr skte h routes ki trh
 app.use(express.json());  
 
 app.use(cors({
-    origin:['http://localhost:3000', 'https://parkeasy-frontend.onrender.com']
+    origin:['http://localhost:3000']
 }));
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://parkeasy-frontend.onrender.com');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', 'https://parkeasy-frontend.onrender.com');
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// });
 
 app.use('/user', userRouter);
 app.use('/parkings', slotRouter);

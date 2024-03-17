@@ -25,7 +25,8 @@ const BookSlot = () => {
 
 
     const fetchbookedSlots = async () => {
-        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/getall`)
+        const res = await fetch('http://localhost:5000/parkings/getall')
+        // const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
         console.log(res.status);
         const data = await res.json();
         console.log(data);
@@ -49,7 +50,9 @@ const BookSlot = () => {
         },
         onSubmit: async (values, {resetForm}) => {
             console.log(values);
-            const res = await fetch('${process.env.REACT_APP_PARKEASY_URL}/user/add', {
+            // const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/add`,
+            const res = await fetch('http://localhost:5000/parkings/add',
+             {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {

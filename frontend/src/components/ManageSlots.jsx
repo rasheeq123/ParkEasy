@@ -4,9 +4,10 @@ import toast from 'react-hot-toast'
 const ManageSlots = () => {
   const [userList, setuserList] = useState([])
   const fetchSlots = async () => {
-    const res = await fetch('${process.env.REACT_APP_PARKEASY_URL}/user/getall')
+    const res = await fetch('http://localhost:5000/parkings/getall')
+    // const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
     console.log(res.status);
-    const data = await res.json(); // data fetch krne ke lie
+    const data = await res.json(); 
     console.table(data);
     setuserList(data);
   }
@@ -18,7 +19,9 @@ const ManageSlots = () => {
   const deleteparkings=async (id)=>{
     console.log(id);
     
-    const res=await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/delete/${id}`, { 
+    const res=await fetch('http://localhost:5000/parkings/delete/'+id, 
+    // const res=await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/delete/${id}`, 
+    { 
         method: 'DELETE',
         
  });

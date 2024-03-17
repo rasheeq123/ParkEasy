@@ -32,7 +32,9 @@ const Signup = () => {
     onSubmit: async (values, { resetForm }) => {
       console.log(values);
       
-      const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/add`, {
+      const res = await fetch('http://localhost:5000/user/add', 
+      // const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/add`, 
+      {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -49,9 +51,9 @@ const Signup = () => {
         navigate('/login');
         resetForm();
       }
-      else { // yaha pe ye condution jab address me kuch glti kr denge tb chlegi, basocally jab error occur hoga 
+      else { 
         Swal.fire({
-          icon: 'error', // error defaullt h yaha
+          icon: 'error', 
           title: 'Error',
           text: 'Something went wrong!!'
         })

@@ -8,7 +8,8 @@ const SlotList = () => {
     const [existSlots, setExistSlots] = useState([]);
 
     const fetchSlots = async () => {
-        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/dummyData/getall`)
+        const res = await fetch('http://localhost:5000/parkings/getall')
+        // const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
         console.log(res.status);
         const data = await res.json(); // data fetch krne ke lie
         console.table(data);
@@ -42,6 +43,7 @@ const SlotList = () => {
                             <div className="card py-2 mt-4 text-center">
                                 <h5>Floor: {item.floor}</h5>
                                 <h5>Slot No: {item.slot}</h5>
+                                <button onClick={() => console.log(`Button ${index + 1} clicked`)}>Book  </button>
                             </div>
                         </div>
                     ))}
