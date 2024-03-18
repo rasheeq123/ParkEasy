@@ -11,10 +11,9 @@ export const AppProvider=({children})=>{
         setloggedIn(false);
         sessionStorage.removeItem('user');
         navigate('/login');
-        
-    };
-
-     return <AppContext.Provider value={{loggedIn, setloggedIn, logout}}> 
+    }
+    
+      return <AppContext.Provider value={{loggedIn, setloggedIn, logout}}> 
      {/* // value ka mtlb jab tk yaha bataenge(provide) nhi tb tk bahar dikhega nhi */}
         {children}
     </AppContext.Provider>
