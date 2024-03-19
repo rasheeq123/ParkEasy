@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import React, { useState } from 'react'
 import Swal from 'sweetalert2';
 import useAppContext from '../AppContext';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
 import { useAuth } from '../contexts/authContext';
@@ -13,7 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('');
   const [isSigningIn, setisSigningIn] = useState(false);
-  const [ErrorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -93,6 +93,7 @@ const Login = () => {
 
   return (
     <div className="container-fluid py-5 d-flex justify-content-center align-items-center">
+      {userLoggedIn && (<Navigate to={'/home'} replace = {true}/>)}
       {/* Left Column for Image */}
       <div className="col-md-6">
         <img src="/images/A1.png" className="img-fluid background-image-login" alt="Background" />
@@ -103,7 +104,8 @@ const Login = () => {
         <div className="card card-design-login shadow">
           <div className="card-body">
             <h2 className="my-3 text-center text-primary">Login</h2>
-            <form onSubmit={loginform.handleSubmit} className="needs-validation">
+            {/* <form onSubmit={loginform.handleSubmit} className="needs-validation"> */}
+            <form onSubmit={onSubmit} className="needs-validation">
               <div className="mb-3">
                 <label htmlFor="email" className="form-label fs-5 fw-semibold text-muted">Email</label>
                 <input
