@@ -1,62 +1,94 @@
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 import Swal from 'sweetalert2';
 import useAppContext from '../AppContext';
 import { useNavigate } from 'react-router-dom';
 
+import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
+import { useAuth } from '../contexts/authContext';
+
 const Login = () => {
-    const navigate = useNavigate();
-    const{ setloggedIn}= useAppContext();
 
+  const { userLoggedIn } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setpassword] = useState('');
+  const [isSigningIn, setisSigningIn] = useState(false);
+  const [ErrorMessage, setErrorMessage] = useState('');
 
-  const loginform= useFormik ({
-    initialValues: {
-        email:'',
-        password:''
-    },
-    onSubmit: async (values, {resetForm})=> {
-        console.log(values);
-
-        const res = await fetch('http://localhost:5000/user/authenticate',{
-            method: 'POST',
-            body:JSON.stringify(values),
-            headers:{
-                'Content-Type':'application/json'
-            }
-        });
-        console.log(res.status);
-            if(res.status===200){
-                Swal.fire({
-                    icon:'success',
-                    title:'Login Successfully'
-                    
-                })
-                const data= await res.json();
-                console.log(data);
-                sessionStorage.setItem('user', JSON.stringify(data));
-                setloggedIn(true);
-                navigate("/slotlist");
-            }
-        
-            else if(res.status===400){
-                Swal.fire({
-                    icon:'error',
-                    title:'Login failed',
-                    text:'Email or password is invalid'
-                    
-                })
-            }
-            else{  
-                Swal.fire({
-                    icon:'error', 
-                    title:'Error',
-                    text:'Something went wrong!!'
-                })
-            
-            }
-            resetForm();
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if(!isSigningIn){ 
+      setisSigningIn(true);
+      await doSignInWithEmailAndPassword(email, password);
     }
-});
+  }
+
+  const onGoogleSignIn =  (e) => {
+    e.preventDefault();
+    if(!isSigningIn){
+      setisSigningIn(true);
+      doSignInWithGoogle().catch((error) => {
+        setErrorMessage(error.message);
+        setisSigningIn(false);
+      });
+    }
+  }
+
+
+
+
+
+  // previous code
+  // const navigate = useNavigate();
+  // const { setloggedIn } = useAppContext();
+  // const loginform = useFormik({
+  //   initialValues: {
+  //     email: '',
+  //     password: ''
+  //   },
+  //   onSubmit: async (values, { resetForm }) => {
+  //     console.log(values);
+
+  //     const res = await fetch('http://localhost:5000/user/authenticate', {
+  //       method: 'POST',
+  //       body: JSON.stringify(values),
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       }
+  //     });
+  //     console.log(res.status);
+  //     if (res.status === 200) {
+  //       Swal.fire({
+  //         icon: 'success',
+  //         title: 'Login Successfully'
+
+  //       })
+  //       const data = await res.json();
+  //       console.log(data);
+  //       sessionStorage.setItem('user', JSON.stringify(data));
+  //       setloggedIn(true);
+  //       navigate("/slotlist");
+  //     }
+
+  //     else if (res.status === 400) {
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Login failed',
+  //         text: 'Email or password is invalid'
+
+  //       })
+  //     }
+  //     else {
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Error',
+  //         text: 'Something went wrong!!'
+  //       })
+
+  //     }
+  //     resetForm();
+  //   }
+  // });
 
 
   return (
@@ -104,8 +136,8 @@ const Login = () => {
         </div>
       </div>
     </div>
-    
-    
+
+
     // <div className=" py-5 vh-100 d-flex bg-dark" >
     //     <img src='\images\A1.png' className='background-image-login'/>
     //         <div className="col-md-6 ms-auto  ">

@@ -21,3 +21,24 @@ export const doSignOut = () =>{
     return signOut(auth);
 };
 
+export const doPasswordReset = (email) =>{        
+    return sendPasswordResetEmail(auth, email);
+}; 
+
+
+
+export const doPasswordUpdate = (password) =>{          
+    return updatePassword(auth.currentUser, password);
+};  
+
+export const doEmailUpdate = (email) =>{          
+    return updateEmail(auth.currentUser, email);
+};
+
+export const doSendEmailVerification = () =>{          
+    return sendEmailVerification(auth.currentUser),{
+        // url: `${window.location.origin}/login`
+        url: `${window.location.origin}/home`
+    }
+}
+
