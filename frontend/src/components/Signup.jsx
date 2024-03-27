@@ -65,41 +65,24 @@ const Signup = () => {
                           <label className="text-sm text-gray-600 font-bold">
                               Email
                           </label>
-                          <input
-                              type="email"
-                              autoComplete='email'
-                              required
-                              value={email} onChange={(e) => { setEmail(e.target.value) }}
-                              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:indigo-600 shadow-sm rounded-lg transition duration-300"
-                          />
+                          <input type="email" {...formik.getFieldProps('email')} />
+      {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
                       </div>
 
                       <div>
                           <label className="text-sm text-gray-600 font-bold">
                               Password
                           </label>
-                          <input
-                              disabled={isRegistering}
-                              type="password"
-                              autoComplete='new-password'
-                              required
-                              value={password} onChange={(e) => { setPassword(e.target.value) }}
-                              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
-                          />
+                          <input type="password" {...formik.getFieldProps('password')} />
+      {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div> : null}
                       </div>
 
                       <div>
                           <label className="text-sm text-gray-600 font-bold">
                               Confirm Password
                           </label>
-                          <input
-                              disabled={isRegistering}
-                              type="password"
-                              autoComplete='off'
-                              required
-                              value={confirmPassword} onChange={(e) => { setconfirmPassword(e.target.value) }}
-                              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
-                          />
+                          <input type="password" {...formik.getFieldProps('confirm')} />
+      {formik.touched.confirm && formik.errors.confirm ? <div>{formik.errors.confirm}</div> : null}
                       </div>
 
                       {errorMessage && (
