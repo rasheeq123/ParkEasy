@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import React from 'react'
+import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import * as Yup from 'yup';
@@ -21,6 +22,12 @@ const SignupSchema = Yup.object().shape({
 
 const Signup = () => {
   const navigate = useNavigate();
+
+   const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setconfirmPassword] = useState('')
+    const [isRegistering, setIsRegistering] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('')
 
   const signupform = useFormik({
     initialValues: {

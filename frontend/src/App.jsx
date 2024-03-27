@@ -12,30 +12,36 @@ import UserAuth from './UserAuth';
 import ManageSlots from './components/ManageSlots';
 import Footer from './components/Footer';
 import NotFound from './components/Notfound';
+import { AuthProvider } from './contexts/authContext';
 
 
 function App() {
   return (
     <div>
+      <AuthProvider>
       <BrowserRouter>
         <AppProvider>
 
           <Navbar />
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/slotlist" element={<SlotList /> } />
+            {/* <Route path="/bookslot" element={<BookSlot />} />
+            <Route path="/manageslot" element={<ManageSlots />} /> */}
             <Route path="/slotlist" element={<UserAuth><SlotList /> </UserAuth>} />
             <Route path="/bookslot" element={<UserAuth><BookSlot /></UserAuth>} />
-            <Route path="/manageslot" element={<ManageSlots />} />
             
-            <Route path="/about" element={<UserAuth><About /></UserAuth>} />
+            {/* <Route path="/about" element={<UserAuth><About /></UserAuth>} /> */}
             <Route path="*" element={<NotFound />} />
             
           </Routes>
           <Footer/>
         </AppProvider>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   )
 }

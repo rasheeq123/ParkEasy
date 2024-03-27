@@ -1,5 +1,5 @@
 import { auth } from "./firebase";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithPopup,  } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateEmail, updatePassword  } from "firebase/auth";
 
 
 export const doCreateUserWithEmailAndPassword = async(email, password) =>{
@@ -36,9 +36,9 @@ export const doEmailUpdate = (email) =>{
 };
 
 export const doSendEmailVerification = () =>{          
-    return sendEmailVerification(auth.currentUser),{
+    return sendEmailVerification(auth.currentUser,{
         // url: `${window.location.origin}/login`
         url: `${window.location.origin}/home`
-    }
+    });
 }
 

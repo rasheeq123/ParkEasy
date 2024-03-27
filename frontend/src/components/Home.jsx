@@ -2,6 +2,8 @@ import React from 'react'
 import {  Button, Container, Grid, Paper, ThemeProvider, Typography, createTheme, styled } from '@mui/material'
 import {NavLink} from 'react-router-dom'
 
+import { useAuth } from '../contexts/authContext';
+
 const theme = createTheme();
 
 const StyledPaper = styled(Paper)({
@@ -28,8 +30,12 @@ const StyledPaper = styled(Paper)({
 });
 
 const Home = () => {
+  //  const {currentUser}= useAuth();
   return (
     <>
+    {/* <div className="text-2xl font-bold pt-14">
+      hello {currentUser ? (currentUser.displayName ? currentUser.displayName : currentUser.email) : "Guest"}You are now logged in 
+    </div> */}
     <div
         className="bghome"
         style={{
