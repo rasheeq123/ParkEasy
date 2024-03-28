@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/authContext';
 import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
+import { BeatLoader } from 'react-spinners';
 
 
 const SignupSchema = Yup.object().shape({
@@ -21,89 +22,104 @@ const SignupSchema = Yup.object().shape({
   confirm: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
-const formik = useFormik({
-  initialValues: {
-    email: '',
-    password: '',
-    confirm: '',
-  },
-  validationSchema: SignupSchema,
-  onSubmit: async (values) => {
-    setIsRegistering(true);
-    await doCreateUserWithEmailAndPassword(values.email, values.password);
-  },
-});
+
 
 
 const Signup = () => {
   const navigate = useNavigate();
 
-   
-    const [isRegistering, setIsRegistering] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
 
-    const { userLoggedIn } = useAuth()
+  const [isRegistering, setIsRegistering] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+  const [message, setMessage] = useState(null);
 
-  
+  const { userLoggedIn } = useAuth()
+
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+      confirm: '',
+    },
+    validationSchema: SignupSchema,
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      setIsRegistering(true);
+      try {
+        await doCreateUserWithEmailAndPassword(values.email, values.password);
+        setMessage('User registered successfully');
+      } catch (error) {
+        setMessage(error.message);
+      }
+      setIsRegistering(false);
+      setSubmitting(false);
+    },
+  });
+
+
 
   return (
-      <>
-          {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
+    <>
+      {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
 
-          <main className="w-full h-screen flex self-center place-content-center place-items-center">
-              <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
-                  <div className="text-center mb-6">
-                      <div className="mt-2">
-                          <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Create a New Account</h3>
-                      </div>
+      <main className="w-full h-screen flex self-center place-content-center place-items-center">
+        <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
+          <div className="text-center mb-6">
+            <div className="mt-2">
+              <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Create a New Account</h3>
+            </div>
 
-                  </div>
-                  <form onSubmit={formik.handleSubmit}
-                      className="space-y-4"
-                  >
-                      <div>
-                          <label className="text-sm text-gray-600 font-bold">
-                              Email
-                          </label>
-                          <input type="email" {...formik.getFieldProps('email')} />
-      {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
-                      </div>
+          </div>
+          <form onSubmit={formik.handleSubmit}
+            className="space-y-4"
+          >
+            <div>
+              <label className="text-sm text-gray-600 font-bold">
+                Email
+              </label>
+              <input type="email" {...formik.getFieldProps('email')} />
+              {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+            </div>
 
-                      <div>
-                          <label className="text-sm text-gray-600 font-bold">
-                              Password
-                          </label>
-                          <input type="password" {...formik.getFieldProps('password')} />
-      {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div> : null}
-                      </div>
+            <div>
+              <label className="text-sm text-gray-600 font-bold">
+                Password
+              </label>
+              <input type="password" {...formik.getFieldProps('password')} />
+              {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div> : null}
+            </div>
 
-                      <div>
-                          <label className="text-sm text-gray-600 font-bold">
-                              Confirm Password
-                          </label>
-                          <input type="password" {...formik.getFieldProps('confirm')} />
-      {formik.touched.confirm && formik.errors.confirm ? <div>{formik.errors.confirm}</div> : null}
-                      </div>
+            <div>
+              <label className="text-sm text-gray-600 font-bold">
+                Confirm Password
+              </label>
+              <input type="password" {...formik.getFieldProps('confirm')} />
+              {formik.touched.confirm && formik.errors.confirm ? <div>{formik.errors.confirm}</div> : null}
+            </div>
 
-                      {errorMessage && (
-                          <span className='text-red-600 font-bold'>{errorMessage}</span>
-                      )}
+            {errorMessage && (
+              <span className='text-red-600 font-bold'>{errorMessage}</span>
+            )}
 
-                      <button
-                          type="submit"
-                          disabled={isRegistering}
-                          className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isRegistering ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
-                      >
-                          {isRegistering ? 'Signing Up...' : 'Sign Up'}
-                      </button>
-                      <div className="text-sm text-center">
-                          Already have an account? {'   '}
-                          <Link to={'/login'} className="text-center text-sm hover:underline font-bold">Continue</Link>
-                      </div>
-                  </form>
-              </div>
-          </main>
-      </>
+            {message && <div>{message}</div>}
+            {formik.isSubmitting ? <BeatLoader /> : null}
+
+
+
+            <button
+              type="submit"
+              disabled={isRegistering}
+              className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isRegistering ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
+            >
+              {isRegistering ? 'Signing Up...' : 'Sign Up'}
+            </button>
+            <div className="text-sm text-center">
+              Already have an account? {'   '}
+              <Link to={'/login'} className="text-center text-sm hover:underline font-bold">Continue</Link>
+            </div>
+          </form>
+        </div>
+      </main>
+    </>
   )
 }
 
@@ -116,7 +132,7 @@ const Signup = () => {
 
 //     onSubmit: async (values, { resetForm }) => {
 //       console.log(values);
-      
+
 //       const res = await fetch('http://localhost:5000/user/add', 
 //       // const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/add`, 
 //       {
@@ -150,7 +166,7 @@ const Signup = () => {
 
 //   return (
 //     <div>
-      
+
 //       <div className='py-5 vh-100' >
 //         <div className="col-md-4 mx-auto py-5">
 //           <div className="card ">

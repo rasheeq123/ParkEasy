@@ -28,7 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/slotlist" element={<SlotList /> } />
+            {/* <Route path="/slotlist" element={<SlotList /> } /> */}
             {/* <Route path="/bookslot" element={<BookSlot />} />
             <Route path="/manageslot" element={<ManageSlots />} /> */}
             <Route path="/slotlist" element={<UserAuth><SlotList /> </UserAuth>} />
