@@ -7,7 +7,7 @@ const UserAuth = ({children}) => {
     const [currentuser, setcurrentuser] = useState(
         JSON.parse(sessionStorage.getItem('user'))
     );
-    if(currentuser!==null){
+    if(currentuser!==null ){
         return children;
     }
     else{
