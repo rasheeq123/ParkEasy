@@ -60,15 +60,18 @@ const Login = () => {
   });
 
   return (
+
+
+    
     
     <div className="container-fluid py-5 d-flex justify-content-center align-items-center">
       {/* Left Column for Image */}
-      <div className="col-md-6">
-        <img src="/images/A1.png" className="img-fluid background-image-login" alt="Background" />
+      <div className="col-md-8">
+        <img src="https://cdn.dribbble.com/users/1676501/screenshots/4617681/media/014d65eb106be77458344ef11c29adb0.gif" className="img-fluid background-image-login" alt="Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
 
       {/* Right Column for Login Form */}
-      <div className="col-md-6">
+      <div className="col-md-4">
         <div className="card card-design-login shadow">
           <div className="card-body">
             <h2 className="my-3 text-center text-primary">Login</h2>
