@@ -85,19 +85,12 @@ const Login = () => {
       // backgroundPosition: 'center',
     }}
   >
-     <Card sx={{ width: { xs: '90%', sm: '70%', md: '50%', lg: '32%' }, boxShadow: 3, borderRadius: 2 }}>
+     <Card sx={{ width: { xs: '90%', sm: '70%', md: '50%', lg: '32%' }, boxShadow: 3, borderRadius: 2, opacity: 0.9}}>
       <CardContent>
-        <Typography variant="h4" align="center" sx={{ opacity: 0.7 }}>
-          Welcome back!
+        <Typography variant="h4" align="center" sx={{ opacity: 0.7, marginBottom: 3, marginTop:3,  fontFamily: 'Lato, sans-serif' }}>
+         LOGIN PANEL
         </Typography>
-        <Typography
-          variant="h6"
-          align="center"
-          sx={{ opacity: 0.7, mb: 4 }}
-          gutterBottom
-        >
-          Please login to your account
-        </Typography>
+        
         <Container maxWidth="sm">
           <form onSubmit={loginform.handleSubmit}>
             <TextField
@@ -143,13 +136,13 @@ const Login = () => {
             <Button
               type="submit"
               variant="contained"
-              color="primary"
+              
               fullWidth
-              sx={{ mt: 3, mb: 1, textTransform: "none" }}
+              sx={{ textTransform:'none',borderRadius:'78px',mt:3,mb:1,width:'100%',fontSize:'15px',py:1,   }}  color='secondary'
             >
-              <Typography variant="h6">Submit</Typography>
+              <Typography sx={{fontFamily: 'Lato, sans-serif'}} variant="h6">Login</Typography>
             </Button>
-            <Typography align="center" variant="body1">
+            <Typography align="center" variant="body2">
               Don't have an account?{" "}
               <NavLink to="/signup">Create account</NavLink>
             </Typography>
