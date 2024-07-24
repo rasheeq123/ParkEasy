@@ -1,6 +1,6 @@
 import './App.css';
 import { AppProvider } from './AppContext';
-import About from './components/About';
+// import About from './components/About';
 import Home from './components/Home';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
@@ -32,8 +32,8 @@ function App() {
             <Route path="/manageslot" element={<ManageSlots />} />
             <Route path="/slotlist" element={<UserAuth><SlotList /> </UserAuth>} />
             <Route path="/bookslot" element={<UserAuth><BookSlot /></UserAuth>} />
-            
-            <Route path="/about" element={<UserAuth><About /></UserAuth>} />
+{/*             
+            <Route path="/about" element={<UserAuth><About /></UserAuth>} /> */}
             <Route path="*" element={<NotFound />} />
             
           </Routes>

@@ -105,7 +105,7 @@ const Signup = () => {
       </video>
       <Card  sx={{ width: { xs: '90%', sm: '70%', md: '50%', lg: '35%' }, boxShadow: 3, borderRadius: 2, zIndex:20, opacity: 0.93}}>
         <CardContent>
-          <Typography variant="h4" align="center" sx={{ opacity: 0.7 }}>
+          <Typography variant="h4" align="center" sx={{ opacity: 0.7, fontFamily: 'Lato, sans-serif'}}>
             Create your Account
           </Typography>
           <Typography
@@ -217,9 +217,9 @@ const Signup = () => {
                 fullWidth
                 sx={{ textTransform:'none',borderRadius:'78px',mt:3,mb:1,width:'100%',fontSize:'15px',py:1}}  color='secondary'
               >
-                <Typography variant="h6">Create account</Typography>
+                <Typography sx={{fontFamily: 'Lato, sans-serif'}} variant="h6">Create your account</Typography>
               </Button>
-              <Typography align="center" variant="body1">
+              <Typography align="center" variant="body1" sx={{fontFamily: 'Lato, sans-serif'}}>
                 Already have an account? <NavLink to="/login">Login</NavLink>
               </Typography>
             </form>

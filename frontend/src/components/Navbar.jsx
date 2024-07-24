@@ -88,14 +88,14 @@ const Navbar = ({ mycart }) => {
                     </div>
                   </NavLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink className="nav-link" to="/about">
 
                     <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
                       About
                     </div>
                   </NavLink>
-                </li>
+                </li> */}
                 {showLoginOption()}
               </ul>
 
