@@ -4,19 +4,24 @@ import Swal from 'sweetalert2';
 import useAppContext from '../AppContext';
 import slotData from './dummyData';
 import * as Yup from 'yup';
+import { Box, Card, CardContent, Typography, FormControl, InputLabel, Select, MenuItem, TextField, Button, FormHelperText } from '@mui/material';
+import { styled } from '@mui/system';
 
-import {
-    Box,
-    Button,
-    Container,
-    TextField,
-    Typography,
-    InputAdornment,
-    IconButton,
-    Card,
-    CardContent,
-  } from "@mui/material";
-  import { AccountCircle, Email, Lock } from "@mui/icons-material";
+
+const StyledCard = styled(Card)(({ theme }) => ({
+    maxWidth: 400,
+    width: '100%',
+    boxShadow: theme.shadows[5],
+    borderRadius: theme.shape.borderRadius,
+    padding: theme.spacing(2),
+    background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(192, 192, 192, 0.9))',
+    color: theme.palette.common.black,
+  }));
+  
+  const StyledButton = styled(Button)(({ theme }) => ({
+    background: `linear-gradient(to right, ${theme.palette.secondary.light}, ${theme.palette.secondary.dark})`,
+    color: theme.palette.common.white,
+  }));
 
 
 const BookSchema = Yup.object().shape({
@@ -117,7 +122,7 @@ const BookSlot = () => {
 
         <Box
     sx={{
-     
+     height: '100vh',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -127,186 +132,94 @@ const BookSlot = () => {
       // backgroundPosition: 'center',
     }}
   >
-    <Card  sx={{ width: { xs: '90%', sm: '70%', md: '50%', lg: '35%' }, boxShadow: 3, borderRadius: 2, zIndex:20, opacity: 0.93}}>
-        <CardContent>
-          <Typography variant="h4" align="center" sx={{ opacity: 0.7, fontFamily: 'Lato, sans-serif'}}>
-            Create your Account
-          </Typography>
-          <Typography
-            variant="h6"
-            align="center"
-            gutterBottom
-            sx={{ opacity: 0.7, mb: 3 }}
-          >
-            
-          </Typography>
-          <Container maxWidth="sm">
-            <form onSubmit={bookslot.handleSubmit}>
-              <TextField
-                id="name"
-                label="Username"
-                type="text"
-                fullWidth
-                margin="normal"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <IconButton edge="start">
-                        <AccountCircle />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-                onChange={signupform.handleChange}
-                value={signupform.values.name}
-                error={Boolean(
-                  signupform.touched.name && signupform.errors.name
-                )}
-                helperText={signupform.touched.name && signupform.errors.name}
-              />
-              <TextField
-                id="email"
-                label="Email"
-                type="email"
-                fullWidth
-                margin="normal"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <IconButton edge="start">
-                        <Email />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-                onChange={signupform.handleChange}
-                value={signupform.values.email}
-                error={Boolean(
-                  signupform.touched.email && signupform.errors.email
-                )}
-                helperText={signupform.touched.email && signupform.errors.email}
-              />
-              <TextField
-                id="password"
-                label="Password"
-                type="password"
-                fullWidth
-                margin="normal"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <IconButton edge="start">
-                        <Lock />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-                onChange={signupform.handleChange}
-                value={signupform.values.password}
-                error={Boolean(
-                  signupform.touched.password && signupform.errors.password
-                )}
-                helperText={
-                  signupform.touched.password && signupform.errors.password
-                }
-              />
-              <TextField
-                id="confirm"
-                label="Confirm Password"
-                type="password"
-                fullWidth
-                margin="normal"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <IconButton edge="start">
-                        <Lock />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-                onChange={signupform.handleChange}
-                value={signupform.values.confirm}
-                error={Boolean(
-                  signupform.touched.confirm && signupform.errors.confirm
-                )}
-                helperText={
-                  signupform.touched.confirm && signupform.errors.confirm
-                }
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                
-                fullWidth
-                sx={{ textTransform:'none',borderRadius:'78px',mt:3,mb:1,width:'100%',fontSize:'15px',py:1}}  color='secondary'
-              >
-                <Typography sx={{fontFamily: 'Lato, sans-serif'}} variant="h6">Create your account</Typography>
-              </Button>
-              <Typography align="center" variant="body1" sx={{fontFamily: 'Lato, sans-serif'}}>
-                Already have an account? <NavLink to="/login">Login</NavLink>
-              </Typography>
-            </form>
-          </Container>
-        </CardContent>
-      </Card>
-        {/* <div className="py-5 vh-100 ">
-            <div className="col-md-12 mx-auto">
-                <div className="card">
-                    <div className="card-body">
-                        <h2 className="my-3">Book Slot</h2>
-                        <form onSubmit={bookslot.handleSubmit}>
-                            <label  >Floor</label>
-                            
 
-                            <select className='form-control mb-3' id="floor" onChange={setFloor} value={bookslot.values.floor}>
-                                <option value={0}> 0</option>
-                                <option value={1}> 1</option>
-                                <option value={2}> 2</option>
-                                <option value={3}> 3</option>
-                                <option value={4}> 4</option>
-                                <option value={5}> 5</option>
-                                <option value={6}> 6</option>
-                                <option value={7}> 7</option>
-                                <option value={8}> 8</option>
-                                <option value={9}> 9</option>
-                                <option value={10}>10</option>
+<Box
+sx={{
+  py: 5,
+  height: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: 'url("/images/background.jpg") no-repeat center center',
+  backgroundSize: 'cover',
+}}
+>
+<StyledCard className="fade-in-up">
+  <CardContent>
+    <Typography variant="h4" gutterBottom sx={{textAlign: 'center' }} className="fade-in-up">Book Slot</Typography>
+    <form onSubmit={bookslot.handleSubmit}>
+      <FormControl fullWidth margin="normal" className="fade-in-up">
+        <InputLabel id="floor-label">Floor</InputLabel>
+        <Select
+          labelId="floor-label"
+          id="floor"
+          value={bookslot.values.floor}
+          onChange={setFloor}
+          label="Floor"
+        >
+          {[...Array(11).keys()].map(floor => (
+            <MenuItem key={floor} value={floor}>{floor}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
 
+      <FormControl fullWidth margin="normal" error={bookslot.touched.slot && Boolean(bookslot.errors.slot)}>
+      <InputLabel id="slot-label">Slot</InputLabel>
+      <Select
+        labelId="slot-label"
+        id="slot"
+        name="slot"
+        value={bookslot.values.slot}
+        onChange={bookslot.handleChange}
+        label="Slot"
+      >
+        <MenuItem value="">Select Slot</MenuItem>
+        {slotsAvailable.map((slot) => (
+          <MenuItem key={slot} value={slot}>
+            {slot}
+          </MenuItem>
+        ))}
+      </Select>
+      <FormHelperText>{bookslot.touched.slot && bookslot.errors.slot}</FormHelperText>
+    </FormControl>
 
-                            </select>
+      <TextField
+        fullWidth
+        margin="normal"
+        id="vehicle"
+        label="Vehicle No."
+        type="text"
+        value={bookslot.values.vehicle}
+        onChange={bookslot.handleChange}
+        error={bookslot.touched.vehicle && Boolean(bookslot.errors.vehicle)}
+        helperText={bookslot.touched.vehicle && bookslot.errors.vehicle}
+        className="fade-in-up"
+      />
 
+      <TextField
+        fullWidth
+        margin="normal"
+        id="time"
+        label="Time"
+        type="datetime-local"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        value={bookslot.values.time}
+        onChange={bookslot.handleChange}
+        error={bookslot.touched.time && Boolean(bookslot.errors.time)}
+        helperText={bookslot.touched.time && bookslot.errors.time}
+        className="fade-in-up"
+      />
 
-                            <label>Slot</label>
-                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.slot && bookslot.errors.slot}</span> 
-                            <select className='form-control mb-3' id="slot" onChange={bookslot.handleChange} value={bookslot.values.slot}>
-                                <option value="">Select Slot</option>
-                                {
-                                    slotsAvailable.map(slot => (
-                                        <option value={slot}>{slot}</option>
-                                    ))
-                                }
-
-
-
-                            </select>
-                            
-
-                            <label>Vehicle No. </label>
-                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.vehicle && bookslot.errors.vehicle}</span> 
-
-                            <input id="vehicle" type="text" className='form-control mb-3' onChange={bookslot.handleChange} value={bookslot.values.vehicle} />
-
-                            <label>Time </label>
-                            <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.time && bookslot.errors.time}</span> 
-                            <input id="time" type="datetime-local" className='form-control mb-3' onChange={bookslot.handleChange} value={bookslot.values.time} />
-
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> */}
-        </Box>
+      <StyledButton type="submit" variant="contained" fullWidth sx={{ mt: 2 }} className="fade-in-up">
+        Submit
+      </StyledButton>
+    </form>
+  </CardContent>
+</StyledCard>
+</Box>
+</Box>      
     )
 }
 
