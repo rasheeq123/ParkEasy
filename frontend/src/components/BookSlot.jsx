@@ -5,6 +5,19 @@ import useAppContext from '../AppContext';
 import slotData from './dummyData';
 import * as Yup from 'yup';
 
+import {
+    Box,
+    Button,
+    Container,
+    TextField,
+    Typography,
+    InputAdornment,
+    IconButton,
+    Card,
+    CardContent,
+  } from "@mui/material";
+  import { AccountCircle, Email, Lock } from "@mui/icons-material";
+
 
 const BookSchema = Yup.object().shape({
 //    floor: Yup.number().required('Required'),
@@ -101,14 +114,150 @@ const BookSlot = () => {
     }
 
     return (
-        <div className="py-5 vh-100 ">
-            <div className="col-md-4 mx-auto">
+
+        <Box
+    sx={{
+     
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 5,
+    backgroundImage: `url(${'/images/bookslot.gif'})`,
+     
+      // backgroundPosition: 'center',
+    }}
+  >
+    <Card  sx={{ width: { xs: '90%', sm: '70%', md: '50%', lg: '35%' }, boxShadow: 3, borderRadius: 2, zIndex:20, opacity: 0.93}}>
+        <CardContent>
+          <Typography variant="h4" align="center" sx={{ opacity: 0.7, fontFamily: 'Lato, sans-serif'}}>
+            Create your Account
+          </Typography>
+          <Typography
+            variant="h6"
+            align="center"
+            gutterBottom
+            sx={{ opacity: 0.7, mb: 3 }}
+          >
+            
+          </Typography>
+          <Container maxWidth="sm">
+            <form onSubmit={bookslot.handleSubmit}>
+              <TextField
+                id="name"
+                label="Username"
+                type="text"
+                fullWidth
+                margin="normal"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <IconButton edge="start">
+                        <AccountCircle />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+                onChange={signupform.handleChange}
+                value={signupform.values.name}
+                error={Boolean(
+                  signupform.touched.name && signupform.errors.name
+                )}
+                helperText={signupform.touched.name && signupform.errors.name}
+              />
+              <TextField
+                id="email"
+                label="Email"
+                type="email"
+                fullWidth
+                margin="normal"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <IconButton edge="start">
+                        <Email />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+                onChange={signupform.handleChange}
+                value={signupform.values.email}
+                error={Boolean(
+                  signupform.touched.email && signupform.errors.email
+                )}
+                helperText={signupform.touched.email && signupform.errors.email}
+              />
+              <TextField
+                id="password"
+                label="Password"
+                type="password"
+                fullWidth
+                margin="normal"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <IconButton edge="start">
+                        <Lock />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+                onChange={signupform.handleChange}
+                value={signupform.values.password}
+                error={Boolean(
+                  signupform.touched.password && signupform.errors.password
+                )}
+                helperText={
+                  signupform.touched.password && signupform.errors.password
+                }
+              />
+              <TextField
+                id="confirm"
+                label="Confirm Password"
+                type="password"
+                fullWidth
+                margin="normal"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <IconButton edge="start">
+                        <Lock />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+                onChange={signupform.handleChange}
+                value={signupform.values.confirm}
+                error={Boolean(
+                  signupform.touched.confirm && signupform.errors.confirm
+                )}
+                helperText={
+                  signupform.touched.confirm && signupform.errors.confirm
+                }
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                
+                fullWidth
+                sx={{ textTransform:'none',borderRadius:'78px',mt:3,mb:1,width:'100%',fontSize:'15px',py:1}}  color='secondary'
+              >
+                <Typography sx={{fontFamily: 'Lato, sans-serif'}} variant="h6">Create your account</Typography>
+              </Button>
+              <Typography align="center" variant="body1" sx={{fontFamily: 'Lato, sans-serif'}}>
+                Already have an account? <NavLink to="/login">Login</NavLink>
+              </Typography>
+            </form>
+          </Container>
+        </CardContent>
+      </Card>
+        {/* <div className="py-5 vh-100 ">
+            <div className="col-md-12 mx-auto">
                 <div className="card">
                     <div className="card-body">
                         <h2 className="my-3">Book Slot</h2>
                         <form onSubmit={bookslot.handleSubmit}>
                             <label  >Floor</label>
-                            {/* <span style={{fontSize: 10, marginLeft:'10px', color: 'red'}} >{bookslot.touched.floor && bookslot.errors.floor}</span>  */}
+                            
 
                             <select className='form-control mb-3' id="floor" onChange={setFloor} value={bookslot.values.floor}>
                                 <option value={0}> 0</option>
@@ -156,7 +305,8 @@ const BookSlot = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
+        </Box>
     )
 }
 

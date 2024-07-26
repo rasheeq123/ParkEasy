@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       {/* Site footer */}
-      <footer className="site-footer mt-5">
+      <footer style={{zIndex:1000}} className="site-footer mt-5">
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-6">
