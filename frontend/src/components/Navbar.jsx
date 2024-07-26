@@ -7,12 +7,24 @@ import useAppContext from '../AppContext';
 const Navbar = ({ mycart }) => {
 
   const { loggedIn, setloggedIn, logout } = useAppContext();
+  const handleNavClick = () => {
+    if (window.innerWidth < 992) {
+      document.querySelector('.navbar-toggler').click();
+    }
+  };
+  
+  const handleLogout = () => {
+    if (window.confirm("Are you sure you want to logout?")) {
+      logout();
+    }
+  };
+  
   const showLoginOption = () => {
     if (loggedIn) {
       return (
         <li className="nav-item">
           <div className="position-relative mt-2 py-1 px-3 text-bg-secondary border border-secondary rounded-pill">
-            <button className='btn btn-secondary' onClick={logout} >  Logout</button>
+            <button className='btn btn-secondary' onClick={handleLogout} >  Logout</button>
           </div>
         </li>
       );
@@ -22,14 +34,14 @@ const Navbar = ({ mycart }) => {
     else {
       return <>
         <li className="nav-item active">
-          <NavLink className="nav-link" to="/login">
+          <NavLink className="nav-link" to="/login" onClick={handleNavClick}>
             <div className="  position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
               Login
             </div>
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/signup">
+          <NavLink className="nav-link" to="/signup" onClick={handleNavClick}>
             <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
               SignUp
             </div>
@@ -59,7 +71,7 @@ const Navbar = ({ mycart }) => {
             <div className="navbar-nav mx-auto ">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li className="nav-item active">
-                  <NavLink className="nav-link  " to="/">
+                  <NavLink className="nav-link  " to="/" onClick={handleNavClick}>
                     <div className="position-relative py-2 px-3 text-bg-secondary border border-secondary rounded-pill">
                       Home
                     </div>
@@ -68,21 +80,21 @@ const Navbar = ({ mycart }) => {
 
 
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/slotlist">
+                  <NavLink className="nav-link" to="/slotlist" onClick={handleNavClick}>
                     <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
                       Slots
                     </div>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/bookslot">
+                  <NavLink className="nav-link" to="/bookslot" onClick={handleNavClick}>
                     <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
                       Book SLot
                     </div>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/manageslot">
+                  <NavLink className="nav-link" to="/manageslot" onClick={handleNavClick}>
                     <div className="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
                       Manage Slot
                     </div>

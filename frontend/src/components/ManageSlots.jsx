@@ -32,7 +32,7 @@ const ManageSlots = () => {
  }
 };
   return (
-    <div className="vh-100 ">
+    <div >
       <div className="container py-4">
         <h1 className="text-center"> Manage Slot </h1>
         <table className='table table-dark'>

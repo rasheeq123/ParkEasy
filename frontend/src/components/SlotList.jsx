@@ -33,7 +33,7 @@ const SlotList = () => {
 
     <Box
       sx={{
-        height: '100vh',
+        height: '300vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
