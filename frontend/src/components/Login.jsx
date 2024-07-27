@@ -27,50 +27,103 @@ const Login = () => {
       email: '',
       password: ''
     },
+
     onSubmit: async (values, { resetForm }) => {
       console.log(values);
 
-      //const res = await fetch('http://localhost:5000/user/authenticate', 
-      const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/authenticate`,
-        {
-        method: 'POST',
-        body: JSON.stringify(values),
-        headers: {
-          'Content-Type': 'application/json'
+      try {
+        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/authenticate`, {
+          method: 'POST',
+          body: JSON.stringify(values),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        console.log(res.status);
+
+        // Ensure the response is OK and contains JSON
+        const contentType = res.headers.get('Content-Type');
+        if (res.ok && contentType && contentType.includes('application/json')) {
+          const data = await res.json();
+          console.log(data);
+          sessionStorage.setItem('user', JSON.stringify(data));
+          setloggedIn(true);
+          navigate("/slotlist");
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Login Successfully'
+          });
+        } else if (res.status === 400) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Login failed',
+            text: 'Email or password is invalid'
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Something went wrong!!'
+          });
         }
-      });
-      console.log(res.status);
-      if (res.status === 200) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Login Successfully'
-
-        })
-        const data = await res.json();
-        console.log(data);
-        sessionStorage.setItem('user', JSON.stringify(data));
-        setloggedIn(true);
-        navigate("/slotlist");
       }
-
-      else if (res.status === 400) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Login failed',
-          text: 'Email or password is invalid'
-
-        })
-      }
-      else {
+      catch (error) {
+        console.error('Error:', error);
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: 'Something went wrong!!'
-        })
-
+          text: 'Network error or server is down'
+        });
       }
+
       resetForm();
     }
+
+    // onSubmit: async (values, { resetForm }) => {
+    //   console.log(values);
+
+    //   //const res = await fetch('http://localhost:5000/user/authenticate', 
+    //   const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/authenticate`,
+    //     {
+    //     method: 'POST',
+    //     body: JSON.stringify(values),
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   });
+    //   console.log(res.status);
+    //   if (res.status === 200) {
+    //     Swal.fire({
+    //       icon: 'success',
+    //       title: 'Login Successfully'
+
+    //     })
+    //     const data = await res.json();
+    //     console.log(data);
+    //     sessionStorage.setItem('user', JSON.stringify(data));
+    //     setloggedIn(true);
+    //     navigate("/slotlist");
+    //   }
+
+    //   else if (res.status === 400) {
+    //     Swal.fire({
+    //       icon: 'error',
+    //       title: 'Login failed',
+    //       text: 'Email or password is invalid'
+
+    //     })
+    //   }
+    //   else {
+    //     Swal.fire({
+    //       icon: 'error',
+    //       title: 'Error',
+    //       text: 'Something went wrong!!'
+    //     })
+
+    //   }
+    //   resetForm();
+    // }
   });
 
   return (
