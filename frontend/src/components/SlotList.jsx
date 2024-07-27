@@ -18,24 +18,47 @@ const SlotList = () => {
     const [existSlots, setExistSlots] = useState([]);
 
     const fetchSlots = async () => {
-        //const res = await fetch('http://localhost:5000/parkings/getall')
-        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
-        console.log(res.status);
-        const data = await res.json(); // data fetch krne ke lie
+    //     //const res = await fetch('http://localhost:5000/parkings/getall')
+    //     const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
+    //     console.log(res.status);
+    //     const data = await res.json(); // data fetch krne ke lie
+    //     console.table(data);
+    //     setSlotList(data);
+    //     const bookedSlots = data.map(slotData => slotData.slot);
+    //     // console.log(bookedSlots);
+    //     setExistSlots(
+    //         slotData.filter(slot => (!bookedSlots.includes(slot.slot)))
+    //     )
+    //     // console.log(slotData.filter(slot => ( !bookedSlots.includes(slot.slot)  )));
+    // }
+    // useEffect(() => {
+
+    //     fetchSlots();
+
+    // }, [])
+
+    try {
+        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`);
+        console.log('Response status:', res.status);
+        const data = await res.json();
         console.table(data);
+  
+        if (!Array.isArray(data)) { // Check if the response is not an array
+        console.error('API response is not an array:', data);
+          return;
+        }
+  
         setSlotList(data);
-        const bookedSlots = data.map(slotData => slotData.slot);
-        // console.log(bookedSlots);
-        setExistSlots(
-            slotData.filter(slot => (!bookedSlots.includes(slot.slot)))
-        )
-        // console.log(slotData.filter(slot => ( !bookedSlots.includes(slot.slot)  )));
-    }
+        const bookedSlots = data.map(slot => slot.slot);
+        setExistSlots(slotData.filter(slot => !bookedSlots.includes(slot.slot)));
+      } catch (error) {
+        console.error('Error fetching slots:', error);// Handle fetch error
+      }
+    };
+  
     useEffect(() => {
-
-        fetchSlots();
-
-    }, [])
+      fetchSlots();
+    }, []);
 
     return (  
         <div style={{ 
