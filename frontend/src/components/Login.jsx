@@ -145,7 +145,6 @@ const Login = () => {
         <Typography variant="h4" align="center" sx={{ opacity: 0.7, marginBottom: 3, marginTop:3,  fontFamily: 'Lato, sans-serif' }}>
          LOGIN PANEL
         </Typography>
-        
         <Container maxWidth="sm">
           <form onSubmit={loginform.handleSubmit}>
             <TextField
