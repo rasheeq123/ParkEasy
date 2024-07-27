@@ -61,7 +61,8 @@ const ManageSlots = () => {
                   <td>{new Date(parkings.time).toLocaleDateString()}</td>
                   <td>{new Date(parkings.time).toLocaleTimeString()}</td>
                   <td>
-                    <Link to={"/updateparkings/" + parkings._id} className="btn btn-primary">Edit</Link>
+                    {/* <Link to={"/bookslot/" + parkings._id} className="btn btn-primary">Edit</Link> */}
+                    <Link to={"/bookslot"+ parkings._id} className="btn btn-primary">Edit</Link>
                   </td>
                   <td>
                     <button

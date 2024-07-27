@@ -29,7 +29,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
-            <Route path="/manageslot" element={<ManageSlots />} />
+            <Route path="/manageslot" element={<UserAuth><ManageSlots /></UserAuth>} />
             <Route path="/slotlist" element={<UserAuth><SlotList /> </UserAuth>} />
             <Route path="/bookslot" element={<UserAuth><BookSlot /></UserAuth>} />
 {/*             
