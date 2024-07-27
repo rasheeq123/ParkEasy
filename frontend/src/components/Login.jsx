@@ -30,7 +30,9 @@ const Login = () => {
     onSubmit: async (values, { resetForm }) => {
       console.log(values);
 
-      const res = await fetch('http://localhost:5000/user/authenticate', {
+      //const res = await fetch('http://localhost:5000/user/authenticate', 
+      const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/user/authenticate`,
+        {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -150,80 +152,7 @@ const Login = () => {
         </Container>
       </CardContent>
     </Card>
-  </Box>
-
-
-
-
-      // <div>
-      //   <div className="container-fluid py-5 d-flex justify-content-center align-items-center">
-      //     <div className="row w-100">
-      //       {/* Left Column for Image */}
-      //       <div className="col-md-6">
-      //         <img src="https://cdn.dribbble.com/users/1676501/screenshots/4617681/media/014d65eb106be77458344ef11c29adb0.gif" className="img-fluid background-image-login" alt="Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-      //       </div>
-        
-      //       {/* Right Column for Login Form */}
-      //       <div className="col-md-6 " style={{ paddingLeft: '9%' }}>
-      //         <div className="card card-design-login shadow mx-5 ">
-      //           <div className="card-body">
-      //             <h2 className=" text-center text-black">Login</h2>
-      //             <form onSubmit={loginform.handleSubmit} className="needs-validation">
-                  
-      //               <div className="mb-3">
-      //                 <label htmlFor="email" className="form-label fs-5 fw-semibold text-muted">Email</label>
-      //                 <input
-      //                   id="email"
-      //                   onChange={loginform.handleChange}
-      //                   value={loginform.values.email}
-      //                   type="email"
-      //                   className="form-control p-3 rounded"
-      //                   required
-      //                 />
-      //               </div>
-      //               <div className="mb-3">
-      //                 <label htmlFor="password" className="form-label fs-5 fw-semibold text-muted">Password</label>
-      //                 <input
-      //                   id="password"
-      //                   onChange={loginform.handleChange}
-      //                   value={loginform.values.password}
-      //                   type="password"
-      //                   className="form-control p-3 rounded"
-      //                   required
-      //                 />
-      //               </div>
-      //             <div className="d-grid">
-      //               <button type="submit" className="btn btn-primary btn-lg rounded-pill">
-      //                 Submit
-      //               </button>
-      //             </div>
-      //           </form>
-      //         </div>
-      //       </div>
-      //     </div>
-      //     </div>
-      //   </div>
-      //</div>
-  
-  
-        //<div className=" py-5 vh-100 d-flex bg-dark" > */}
-            // <img src='\images\A1.png' className='background-image-login'/>
-            //     <div className="col-md-6 ms-auto  ">
-            //         <div className="card card-design-login  shadow">
-            //             <div className="card-body">
-            //                 <h2 className="my-3"><center>Login form</center></h2>
-            //                 <form onSubmit={loginform.handleSubmit} >
-            //                 <label className='fs-5 fw-semibold'>Email</label>
-            //                 <input id="email" onChange={loginform.handleChange} value={loginform.values.email} type="email" className='form-control mb-3 shadow p-3 mb-5  rounded' />
-            //                 <label className='fs-5 fw-semibold'>Password</label>
-            //                 <input id="password" onChange={loginform.handleChange} value={loginform.values.password} type="password" className='form-control mb-3 shadow p-3 mb-5 bg-body-tertiary rounded' />
-            //                 <button type="submit" className="btn btn-primary">Submit</button>
-            //                 </form>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div> 
-      
+  </Box>      
     )
   }
 

@@ -18,8 +18,8 @@ const SlotList = () => {
     const [existSlots, setExistSlots] = useState([]);
 
     const fetchSlots = async () => {
-        const res = await fetch('http://localhost:5000/parkings/getall')
-        // const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
+        //const res = await fetch('http://localhost:5000/parkings/getall')
+        const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
         console.log(res.status);
         const data = await res.json(); // data fetch krne ke lie
         console.table(data);
