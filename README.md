@@ -43,7 +43,7 @@
 Clone the project
 
 ```bash
-https://github.com/omkarsharma2821/VintiMart
+https://github.com/rasheeq123/ParkEasy
 ```
 Go to the frontend directory
 ```bash
@@ -81,8 +81,8 @@ npm run build
 
 ## :handshake: Contact
 
-Omkar Sharma - [LINKEDIN](https://www.linkedin.com/in/omkarsharmaa/) <br>
-Email - omkarsharma2821@gmail.com <br>
-Project Link: [GITHUB](https://github.com/omkarsharma2821/VintiMart) 
+Rasheeq Zehra - [LINKEDIN](https://www.linkedin.com/in/rasheeq-zehra-mern-developer/) <br>
+Email - zehrarasheeq@gmail.com <br>
+Project Link: [GITHUB](https://github.com/rasheeq123/ParkEasy) 
 
-## If you liked the project, you can Star ⭐ the repo.
+## If you found the project helpful, consider giving the repo a Star ⭐.
