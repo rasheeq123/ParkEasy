@@ -1,86 +1,110 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import toast from 'react-hot-toast'
+import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import { Container, Typography, Table, TableHead, TableRow, TableCell, TableBody, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { styled } from '@mui/system';
+
+const StyledContainer = styled(Container)({
+  padding: '16px',
+});
+
+const StyledTable = styled(Table)({
+  backgroundColor: '#333',
+});
+
+const StyledTableCell = styled(TableCell)({
+  color: '#fff',
+});
+
+const StyledButton = styled(Button)({
+  '&.edit': {
+    backgroundColor: '#007bff',
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: '#0056b3',
+    },
+  },
+  '&.delete': {
+    backgroundColor: '#dc3545',
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: '#c82333',
+    },
+  },
+});
+
 const ManageSlots = () => {
-  const [userList, setuserList] = useState([])
+  const [userList, setuserList] = useState([]);
+  
   const fetchSlots = async () => {
-    // const res = await fetch('http://localhost:5000/parkings/getall')
-    const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`)
-    console.log(res.status);
-    const data = await res.json(); 
-    console.table(data);
+    const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/getall`);
+    const data = await res.json();
     setuserList(data);
-  }
+  };
+
   useEffect(() => {
-    
     fetchSlots();
-  }, [])
+  }, []);
 
-  const deleteparkings=async (id)=>{
-    console.log(id);
-    
-    //const res=await fetch('http://localhost:5000/parkings/delete/'+id, 
-    const res=await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/delete/${id}`, 
-    { 
-        method: 'DELETE',
-        
- });
- console.log(res.status);
- if(res.status===200){
-  fetchSlots();
-    toast.success('Slot Deleted Successfully');
- }
-};
+  const deleteparkings = async (id) => {
+    const res = await fetch(`${process.env.REACT_APP_PARKEASY_URL}/parkings/delete/${id}`, {
+      method: 'DELETE',
+    });
+    if (res.status === 200) {
+      fetchSlots();
+      toast.success('Slot Deleted Successfully');
+    }
+  };
+
   return (
-    <div >
-      <div className="container py-4">
-        <h1 className="text-center"> Manage Slot </h1>
-        <table className='table table-dark'>
-          <thead>
-            <tr>
-
-              <th>S.no</th>
-              <th>ID</th>
-              <th>Floor</th>
-              <th>Slot</th>
-              <th>Vehicle No.</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th colSpan={2}>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              userList.map((parkings, index) => (
-                <tr>
-                  <td>{index + 1}</td>
-                  <td>{parkings._id}</td>
-                  <td>{parkings.floor}</td>
-                  <td>{parkings.slot}</td>
-                  <td>{parkings.vehicle}</td>
-                  <td>{new Date(parkings.time).toLocaleDateString()}</td>
-                  <td>{new Date(parkings.time).toLocaleTimeString()}</td>
-                  <td>
-                    {/* <Link to={"/bookslot/" + parkings._id} className="btn btn-primary">Edit</Link> */}
-                    <Link to={"/bookslot"+ parkings._id} className="btn btn-primary">Edit</Link>
-                  </td>
-                  <td>
-                    <button
-                      onClick={() => { deleteparkings(parkings._id) }}
-                      className="btn btn-danger">Delete</button>
-                  </td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-
-      
-    </div>
-
-
-  )
-}
+    <StyledContainer>
+      <Typography variant="h4" align="center" gutterBottom>
+        Manage Slot
+      </Typography>
+      <StyledTable>
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>S.no</StyledTableCell>
+            <StyledTableCell>ID</StyledTableCell>
+            <StyledTableCell>Floor</StyledTableCell>
+            <StyledTableCell>Slot</StyledTableCell>
+            <StyledTableCell>Vehicle No.</StyledTableCell>
+            <StyledTableCell>Date</StyledTableCell>
+            <StyledTableCell>Time</StyledTableCell>
+            <StyledTableCell>Edit</StyledTableCell>
+            <StyledTableCell>Delete</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {userList.map((parkings, index) => (
+            <TableRow key={parkings._id}>
+              <StyledTableCell>{index + 1}</StyledTableCell>
+              <StyledTableCell>{parkings._id}</StyledTableCell>
+              <StyledTableCell>{parkings.floor}</StyledTableCell>
+              <StyledTableCell>{parkings.slot}</StyledTableCell>
+              <StyledTableCell>{parkings.vehicle}</StyledTableCell>
+              <StyledTableCell>{new Date(parkings.time).toLocaleDateString()}</StyledTableCell>
+              <StyledTableCell>{new Date(parkings.time).toLocaleTimeString()}</StyledTableCell>
+              <StyledTableCell>
+                <Link to={`/bookslot/${parkings._id}`} style={{ textDecoration: 'none' }}>
+                  <StyledButton className="edit" variant="contained">Edit</StyledButton>
+                </Link>
+              </StyledTableCell>
+              <StyledTableCell>
+                <StyledButton
+                  className="delete"
+                  variant="contained"
+                  onClick={() => { deleteparkings(parkings._id) }}
+                >
+                  Delete
+                </StyledButton>
+              </StyledTableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </StyledTable>
+    </StyledContainer>
+  );
+};
 
 export default ManageSlots;
