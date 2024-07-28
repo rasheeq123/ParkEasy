@@ -3,7 +3,7 @@
 <h1>ParkEasy</h1>
 <p>In the dynamic landscape of urban living, parking challenges have burgeoned into a prominent concern. This mini-project, conceived during an internship, seeks to introduce an innovative Online Parking Slot Booking System i.e. “ParkEasy”, that leverages modern technologies to address urban congestion. Developed using the MERN (MongoDB, Express.js, React.js, Node.js)  stack, the project focuses on creating a robust and user-centric solution for efficient parking management.</p>
 
-<h4> <a href=https://parkeasy-7vr1.onrender.com/>View Demo</a> <span> · </span> <a href="https://github.com/rasheeq_123/ParkEasy/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/rasheeq_123/ParkEasy/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/rasheeq_123/ParkEasy/issues"> Request Feature </a> </h4>
+<h4> <a href=https://parkeasy-7vr1.onrender.com/>View Demo</a> <span> · </span> <a href="https://github.com/rasheeq123/ParkEasy/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/rasheeq123/ParkEasy/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/rasheeq123/ParkEasy/issues"> Request Feature </a> </h4>
 
 
 </div>
