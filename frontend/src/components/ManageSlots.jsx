@@ -86,7 +86,7 @@ const ManageSlots = () => {
               <StyledTableCell>{new Date(parkings.time).toLocaleDateString()}</StyledTableCell>
               <StyledTableCell>{new Date(parkings.time).toLocaleTimeString()}</StyledTableCell>
               <StyledTableCell>
-                <Link to={`/bookslot/${parkings._id}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/bookslot`} style={{ textDecoration: 'none' }}>
                   <StyledButton className="edit" variant="contained">Edit</StyledButton>
                 </Link>
               </StyledTableCell>
